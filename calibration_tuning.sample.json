@@ -1,0 +1,24 @@
+{
+  "thermal": {
+    "delta_to_base_weight": 0.35,
+    "quality_pull_to_base": 0.45,
+    "affinity_penalty_strength": 0.75,
+    "affinity_soft_penalty_strength": 0.12,
+    "min_tm_fraction": 0.72
+  },
+  "hardness": {
+    "delta_to_base_weight": 0.25,
+    "quality_pull_to_base": 0.35,
+    "superalloy_al_ti_threshold": 0.012
+  },
+  "state_factors": {
+    "high_carbide_steel_threshold": 1.0,
+    "high_carbide_steel": {
+      "raw": 0.22,
+      "tempered": 0.68,
+      "quenched": 0.88,
+      "potential": 1.0,
+      "default": 0.26
+    }
+  }
+}

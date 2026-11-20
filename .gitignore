@@ -1,0 +1,5 @@
+/REV.md
+/REF_PLAN.md
+/.env
+__pycache__/
+*.py[cod]

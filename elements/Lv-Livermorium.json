@@ -1,0 +1,119 @@
+{
+  "id": "livermorium",
+  "symbol": "Lv",
+  "name": "Livermorium",
+  "identification": {
+    "atomic_number": 116,
+    "atomic_mass": 293.0,
+    "density_solid_kg_m3": 12900.0
+  },
+  "crystallography": {
+    "crystal_structure_rt": "FCC",
+    "allotropic_transformations": [
+      {
+        "temp_K": 298,
+        "structure": "FCC"
+      }
+    ]
+  },
+  "geometry": {
+    "atomic_radius_pm": 220,
+    "covalent_radius_pm": 175
+  },
+  "elastic": {
+    "young_GPa": 20.455,
+    "shear_GPa": 7.69,
+    "bulk_GPa": 20.054,
+    "poisson_ratio": 0.33
+  },
+  "thermal": {
+    "melting_point_K": 1128,
+    "boiling_point_K": 2030,
+    "thermal_conductivity_W_mK": 14.6,
+    "specific_heat_capacity_J_kgK": 350
+  },
+  "electrical": {
+    "electrical_resistivity_Ohm_m": 2.423781818e-07,
+    "temp_res_coefficient_1_K": 0.0034
+  },
+  "chemical": {
+    "electronegativity_pauling": NaN,
+    "standard_electrode_potential_V": 0.492,
+    "oxide_formation_energy_kJ_mol": -20.0,
+    "valence_states": [
+      -2,
+      2,
+      4
+    ]
+  },
+  "nuclear": {
+    "neutron_cross_section_barn": 6.149
+  },
+  "visual": {
+    "color_rgb": [
+      195,
+      200,
+      208
+    ],
+    "color_power": 1.0,
+    "darkening_power": 0.0,
+    "whitening_power": 0.0,
+    "roughness_bias": 0.0,
+    "is_colorless": false,
+    "container_tint_rgb": [
+      195,
+      200,
+      208
+    ],
+    "luster_group": "satin"
+  },
+  "data_quality": {
+    "identification": {
+      "atomic_number": "reference",
+      "atomic_mass": "reference",
+      "density_solid_kg_m3": "reference"
+    },
+    "crystallography": {
+      "crystal_structure_rt": "unknown",
+      "allotropic_transformations": "unknown"
+    },
+    "geometry": {
+      "atomic_radius_pm": "unknown",
+      "covalent_radius_pm": "unknown"
+    },
+    "elastic": {
+      "young_GPa": "unknown",
+      "shear_GPa": "unknown",
+      "bulk_GPa": "unknown",
+      "poisson_ratio": "unknown"
+    },
+    "thermal": {
+      "melting_point_K": "unknown",
+      "boiling_point_K": "unknown",
+      "thermal_conductivity_W_mK": "unknown",
+      "specific_heat_capacity_J_kgK": "unknown"
+    },
+    "electrical": {
+      "electrical_resistivity_Ohm_m": "unknown",
+      "temp_res_coefficient_1_K": "unknown"
+    },
+    "chemical": {
+      "electronegativity_pauling": "reference",
+      "standard_electrode_potential_V": "unknown",
+      "oxide_formation_energy_kJ_mol": "unknown",
+      "valence_states": "reference"
+    },
+    "nuclear": {
+      "neutron_cross_section_barn": "unknown"
+    }
+  },
+  "source_notes": {
+    "field_sources": {
+      "identification.atomic_number": "mendeleev",
+      "identification.atomic_mass": "mendeleev",
+      "identification.density_solid_kg_m3": "mendeleev",
+      "chemical.electronegativity_pauling": "pymatgen",
+      "chemical.valence_states": "pubchem"
+    }
+  }
+}

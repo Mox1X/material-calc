@@ -1,0 +1,2008 @@
+{
+  "Gd": {
+    "file": "Gd-Gadolinium.png",
+    "rgb": [
+      129,
+      177,
+      219
+    ],
+    "hex": "#81B1DB",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Ni": {
+    "file": "Ni-Nickel.png",
+    "rgb": [
+      228,
+      222,
+      206
+    ],
+    "hex": "#E4DECE",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Eu": {
+    "file": "Eu-Europium.png",
+    "rgb": [
+      128,
+      212,
+      199
+    ],
+    "hex": "#80D4C7",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Be": {
+    "file": "Be-Beryllium.png",
+    "rgb": [
+      111,
+      219,
+      162
+    ],
+    "hex": "#6FDBA2",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Mc": {
+    "file": "Mc-Moscovium.png",
+    "rgb": [
+      181,
+      101,
+      189
+    ],
+    "hex": "#B565BD",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Sm": {
+    "file": "Sm-Samarium.png",
+    "rgb": [
+      93,
+      204,
+      119
+    ],
+    "hex": "#5DCC77",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "H": {
+    "file": "H-Hydrogen.png",
+    "rgb": [
+      230,
+      238,
+      245
+    ],
+    "hex": "#E6EEF5",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Pm": {
+    "file": "Pm-Promethium.png",
+    "rgb": [
+      133,
+      196,
+      95
+    ],
+    "hex": "#85C45F",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Pa": {
+    "file": "Pa-Protactinium.png",
+    "rgb": [
+      119,
+      196,
+      129
+    ],
+    "hex": "#77C481",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Cm": {
+    "file": "Cm-Curium.png",
+    "rgb": [
+      196,
+      95,
+      176
+    ],
+    "hex": "#C45FB0",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Cn": {
+    "file": "Cn-Copernicium.png",
+    "rgb": [
+      125,
+      198,
+      204
+    ],
+    "hex": "#7DC6CC",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Mn": {
+    "file": "Mn-Manganese.png",
+    "rgb": [
+      185,
+      193,
+      200
+    ],
+    "hex": "#B9C1C8",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Nd": {
+    "file": "Nd-Neodymium.png",
+    "rgb": [
+      189,
+      189,
+      96
+    ],
+    "hex": "#BDBD60",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Y": {
+    "file": "Y-Yttrium.png",
+    "rgb": [
+      219,
+      117,
+      111
+    ],
+    "hex": "#DB756F",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Tl": {
+    "file": "Tl-Thallium.png",
+    "rgb": [
+      104,
+      196,
+      100
+    ],
+    "hex": "#68C464",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "As": {
+    "file": "As-Arsenic.png",
+    "rgb": [
+      102,
+      212,
+      140
+    ],
+    "hex": "#66D48C",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Sg": {
+    "file": "Sg-Seaborgium.png",
+    "rgb": [
+      196,
+      114,
+      167
+    ],
+    "hex": "#C472A7",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "W": {
+    "file": "W-Wolframium.png",
+    "rgb": [
+      125,
+      133,
+      140
+    ],
+    "hex": "#7D858C",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Re": {
+    "file": "Re-Rhenium.png",
+    "rgb": [
+      114,
+      122,
+      132
+    ],
+    "hex": "#727A84",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Te": {
+    "file": "Te-Tellurium.png",
+    "rgb": [
+      109,
+      204,
+      115
+    ],
+    "hex": "#6DCC73",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Mt": {
+    "file": "Mt-Meitnerium.png",
+    "rgb": [
+      196,
+      219,
+      111
+    ],
+    "hex": "#C4DB6F",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Fl": {
+    "file": "Fl-Flerovium.png",
+    "rgb": [
+      151,
+      122,
+      219
+    ],
+    "hex": "#977ADB",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Dy": {
+    "file": "Dy-Dysprosium.png",
+    "rgb": [
+      169,
+      105,
+      196
+    ],
+    "hex": "#A969C4",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Tc": {
+    "file": "Tc-Technetium.png",
+    "rgb": [
+      123,
+      212,
+      169
+    ],
+    "hex": "#7BD4A9",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Sb": {
+    "file": "Sb-Stibium.png",
+    "rgb": [
+      140,
+      161,
+      115
+    ],
+    "hex": "#8CA173",
+    "luster_group": "dull",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "K": {
+    "file": "K-Kalium.png",
+    "rgb": [
+      219,
+      106,
+      139
+    ],
+    "hex": "#DB6A8B",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Mo": {
+    "file": "Mo-Molybdenum.png",
+    "rgb": [
+      125,
+      133,
+      140
+    ],
+    "hex": "#7D858C",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Sn": {
+    "file": "Sn-Stannum.png",
+    "rgb": [
+      233,
+      240,
+      255
+    ],
+    "hex": "#E9F0FF",
+    "luster_group": "dull",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Bk": {
+    "file": "Bk-Berkelium.png",
+    "rgb": [
+      204,
+      93,
+      114
+    ],
+    "hex": "#CC5D72",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Pu": {
+    "file": "Pu-Plutonium.png",
+    "rgb": [
+      117,
+      120,
+      219
+    ],
+    "hex": "#7578DB",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "S": {
+    "file": "S-Sulfur.png",
+    "rgb": [
+      171,
+      150,
+      11
+    ],
+    "hex": "#AB960B",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Ts": {
+    "file": "Ts-Tennessine.png",
+    "rgb": [
+      204,
+      114,
+      98
+    ],
+    "hex": "#CC7262",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Rf": {
+    "file": "Rf-Rutherfordium.png",
+    "rgb": [
+      116,
+      101,
+      219
+    ],
+    "hex": "#7465DB",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Yb": {
+    "file": "Yb-Ytterbium.png",
+    "rgb": [
+      176,
+      189,
+      115
+    ],
+    "hex": "#B0BD73",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "La": {
+    "file": "La-Lanthanum.png",
+    "rgb": [
+      204,
+      119,
+      192
+    ],
+    "hex": "#CC77C0",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Og": {
+    "file": "Og-Oganesson.png",
+    "rgb": [
+      212,
+      185,
+      97
+    ],
+    "hex": "#D4B961",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Th": {
+    "file": "Th-Thorium.png",
+    "rgb": [
+      138,
+      189,
+      86
+    ],
+    "hex": "#8ABD56",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "N": {
+    "file": "N-Nitrogen.png",
+    "rgb": [
+      208,
+      223,
+      245
+    ],
+    "hex": "#D0DFF5",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Bi": {
+    "file": "Bi-Bismuth.png",
+    "rgb": [
+      108,
+      163,
+      176
+    ],
+    "hex": "#6CA3B0",
+    "luster_group": "dull",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Sc": {
+    "file": "Sc-Scandium.png",
+    "rgb": [
+      196,
+      193,
+      119
+    ],
+    "hex": "#C4C177",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Os": {
+    "file": "Os-Osmium.png",
+    "rgb": [
+      182,
+      91,
+      196
+    ],
+    "hex": "#B65BC4",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Ho": {
+    "file": "Ho-Holmium.png",
+    "rgb": [
+      204,
+      104,
+      173
+    ],
+    "hex": "#CC68AD",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Ac": {
+    "file": "Ac-Actinium.png",
+    "rgb": [
+      219,
+      207,
+      106
+    ],
+    "hex": "#DBCF6A",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Ar": {
+    "file": "Ar-Argon.png",
+    "rgb": [
+      199,
+      213,
+      235
+    ],
+    "hex": "#C7D5EB",
+    "luster_group": "satin",
+    "is_colorless": true,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Fe": {
+    "file": "Fe-Ferrum.png",
+    "rgb": [
+      185,
+      193,
+      200
+    ],
+    "hex": "#B9C1C8",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Br": {
+    "file": "Br-Bromine.png",
+    "rgb": [
+      178,
+      156,
+      11
+    ],
+    "hex": "#B29C0B",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Fr": {
+    "file": "Fr-Francium.png",
+    "rgb": [
+      204,
+      109,
+      142
+    ],
+    "hex": "#CC6D8E",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Zn": {
+    "file": "Zn-Zinc.png",
+    "rgb": [
+      225,
+      234,
+      247
+    ],
+    "hex": "#E1EAF7",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "At": {
+    "file": "At-Astatine.png",
+    "rgb": [
+      143,
+      110,
+      189
+    ],
+    "hex": "#8F6EBD",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "F": {
+    "file": "F-Fluorine.png",
+    "rgb": [
+      209,
+      245,
+      181
+    ],
+    "hex": "#D1F5B5",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Ga": {
+    "file": "Ga-Gallium.png",
+    "rgb": [
+      186,
+      196,
+      105
+    ],
+    "hex": "#BAC469",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Ca": {
+    "file": "Ca-Calcium.png",
+    "rgb": [
+      189,
+      120,
+      86
+    ],
+    "hex": "#BD7856",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Xe": {
+    "file": "Xe-Xenon.png",
+    "rgb": [
+      199,
+      213,
+      235
+    ],
+    "hex": "#C7D5EB",
+    "luster_group": "satin",
+    "is_colorless": true,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Na": {
+    "file": "Na-Natrium.png",
+    "rgb": [
+      196,
+      176,
+      100
+    ],
+    "hex": "#C4B064",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Rh": {
+    "file": "Rh-Rhodium.png",
+    "rgb": [
+      218,
+      218,
+      225
+    ],
+    "hex": "#DADAE1",
+    "luster_group": "mirror",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Ds": {
+    "file": "Ds-Darmstadtium.png",
+    "rgb": [
+      108,
+      189,
+      91
+    ],
+    "hex": "#6CBD5B",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Hs": {
+    "file": "Hs-Hassium.png",
+    "rgb": [
+      212,
+      172,
+      113
+    ],
+    "hex": "#D4AC71",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Kr": {
+    "file": "Kr-Krypton.png",
+    "rgb": [
+      199,
+      213,
+      235
+    ],
+    "hex": "#C7D5EB",
+    "luster_group": "satin",
+    "is_colorless": true,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Cu": {
+    "file": "Cu-Cuprum.png",
+    "rgb": [
+      255,
+      106,
+      67
+    ],
+    "hex": "#FF6A43",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Rg": {
+    "file": "Rg-Roentgenium.png",
+    "rgb": [
+      91,
+      196,
+      138
+    ],
+    "hex": "#5BC48A",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Lr": {
+    "file": "Lr-Lawrencium.png",
+    "rgb": [
+      102,
+      155,
+      212
+    ],
+    "hex": "#669BD4",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Ne": {
+    "file": "Ne-Neon.png",
+    "rgb": [
+      199,
+      213,
+      235
+    ],
+    "hex": "#C7D5EB",
+    "luster_group": "satin",
+    "is_colorless": true,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Ce": {
+    "file": "Ce-Cerium.png",
+    "rgb": [
+      212,
+      118,
+      140
+    ],
+    "hex": "#D4768C",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Ti": {
+    "file": "Ti-Titanium.png",
+    "rgb": [
+      185,
+      193,
+      200
+    ],
+    "hex": "#B9C1C8",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Cl": {
+    "file": "Cl-Chlorine.png",
+    "rgb": [
+      201,
+      235,
+      107
+    ],
+    "hex": "#C9EB6B",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Si": {
+    "file": "Si-Silicon.png",
+    "rgb": [
+      134,
+      219,
+      188
+    ],
+    "hex": "#86DBBC",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Np": {
+    "file": "Np-Neptunium.png",
+    "rgb": [
+      118,
+      179,
+      212
+    ],
+    "hex": "#76B3D4",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Ta": {
+    "file": "Ta-Tantalum.png",
+    "rgb": [
+      125,
+      133,
+      140
+    ],
+    "hex": "#7D858C",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Tm": {
+    "file": "Tm-Thulium.png",
+    "rgb": [
+      219,
+      166,
+      101
+    ],
+    "hex": "#DBA665",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Se": {
+    "file": "Se-Selenium.png",
+    "rgb": [
+      101,
+      219,
+      215
+    ],
+    "hex": "#65DBD7",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Hg": {
+    "file": "Hg-Hydrargyrum.png",
+    "rgb": [
+      178,
+      185,
+      200
+    ],
+    "hex": "#B2B9C8",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Cs": {
+    "file": "Cs-Cesium.png",
+    "rgb": [
+      86,
+      96,
+      189
+    ],
+    "hex": "#5660BD",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Hf": {
+    "file": "Hf-Hafnium.png",
+    "rgb": [
+      114,
+      204,
+      150
+    ],
+    "hex": "#72CC96",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Cd": {
+    "file": "Cd-Cadmium.png",
+    "rgb": [
+      212,
+      97,
+      143
+    ],
+    "hex": "#D4618F",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Pt": {
+    "file": "Pt-Platinum.png",
+    "rgb": [
+      220,
+      213,
+      191
+    ],
+    "hex": "#DCD5BF",
+    "luster_group": "mirror",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "No": {
+    "file": "No-Nobelium.png",
+    "rgb": [
+      104,
+      204,
+      194
+    ],
+    "hex": "#68CCC2",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Mg": {
+    "file": "Mg-Magnesium.png",
+    "rgb": [
+      162,
+      204,
+      98
+    ],
+    "hex": "#A2CC62",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Cr": {
+    "file": "Cr-Chromium.png",
+    "rgb": [
+      201,
+      207,
+      213
+    ],
+    "hex": "#C9CFD5",
+    "luster_group": "mirror",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "V": {
+    "file": "V-Vanadium.png",
+    "rgb": [
+      185,
+      193,
+      200
+    ],
+    "hex": "#B9C1C8",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "O": {
+    "file": "O-Oxygen.png",
+    "rgb": [
+      191,
+      219,
+      255
+    ],
+    "hex": "#BFDBFF",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Al": {
+    "file": "Al-Aluminum.png",
+    "rgb": [
+      236,
+      242,
+      255
+    ],
+    "hex": "#ECF2FF",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "C": {
+    "file": "C-Carbon.png",
+    "rgb": [
+      55,
+      55,
+      58
+    ],
+    "hex": "#37373A",
+    "luster_group": "greasy",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Au": {
+    "file": "Au-Aurum.png",
+    "rgb": [
+      255,
+      215,
+      0
+    ],
+    "hex": "#FFD700",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Zr": {
+    "file": "Zr-Zirconium.png",
+    "rgb": [
+      189,
+      156,
+      91
+    ],
+    "hex": "#BD9C5B",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "P": {
+    "file": "P-Phosphorus.png",
+    "rgb": [
+      175,
+      153,
+      11
+    ],
+    "hex": "#AF990B",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Tb": {
+    "file": "Tb-Terbium.png",
+    "rgb": [
+      112,
+      105,
+      189
+    ],
+    "hex": "#7069BD",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Pd": {
+    "file": "Pd-Palladium.png",
+    "rgb": [
+      220,
+      213,
+      191
+    ],
+    "hex": "#DCD5BF",
+    "luster_group": "mirror",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Cf": {
+    "file": "Cf-Californium.png",
+    "rgb": [
+      212,
+      165,
+      128
+    ],
+    "hex": "#D4A580",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Fm": {
+    "file": "Fm-Fermium.png",
+    "rgb": [
+      132,
+      189,
+      105
+    ],
+    "hex": "#84BD69",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Db": {
+    "file": "Db-Dubnium.png",
+    "rgb": [
+      169,
+      115,
+      189
+    ],
+    "hex": "#A973BD",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "U": {
+    "file": "U-Uranium.png",
+    "rgb": [
+      119,
+      204,
+      182
+    ],
+    "hex": "#77CCB6",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Nb": {
+    "file": "Nb-Niobium.png",
+    "rgb": [
+      130,
+      138,
+      145
+    ],
+    "hex": "#828A91",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Md": {
+    "file": "Md-Mendelevium.png",
+    "rgb": [
+      105,
+      196,
+      131
+    ],
+    "hex": "#69C483",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "He": {
+    "file": "He-Helium.png",
+    "rgb": [
+      199,
+      213,
+      235
+    ],
+    "hex": "#C7D5EB",
+    "luster_group": "satin",
+    "is_colorless": true,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Ru": {
+    "file": "Ru-Ruthenium.png",
+    "rgb": [
+      150,
+      222,
+      235
+    ],
+    "hex": "#96DEEB",
+    "luster_group": "mirror",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Pr": {
+    "file": "Pr-Praseodymium.png",
+    "rgb": [
+      219,
+      156,
+      117
+    ],
+    "hex": "#DB9C75",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Er": {
+    "file": "Er-Erbium.png",
+    "rgb": [
+      212,
+      102,
+      110
+    ],
+    "hex": "#D4666E",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Po": {
+    "file": "Po-Polonium.png",
+    "rgb": [
+      141,
+      150,
+      184
+    ],
+    "hex": "#8D96B8",
+    "luster_group": "dull",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "B": {
+    "file": "B-Boron.png",
+    "rgb": [
+      91,
+      181,
+      189
+    ],
+    "hex": "#5BB5BD",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Ag": {
+    "file": "Ag-Argentum.png",
+    "rgb": [
+      236,
+      243,
+      255
+    ],
+    "hex": "#ECF3FF",
+    "luster_group": "mirror",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Ra": {
+    "file": "Ra-Radium.png",
+    "rgb": [
+      212,
+      136,
+      107
+    ],
+    "hex": "#D4886B",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Li": {
+    "file": "Li-Lithium.png",
+    "rgb": [
+      127,
+      212,
+      113
+    ],
+    "hex": "#7FD471",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Es": {
+    "file": "Es-Einsteinium.png",
+    "rgb": [
+      215,
+      219,
+      129
+    ],
+    "hex": "#D7DB81",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Lu": {
+    "file": "Lu-Lutetium.png",
+    "rgb": [
+      132,
+      196,
+      114
+    ],
+    "hex": "#84C472",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Ge": {
+    "file": "Ge-Germanium.png",
+    "rgb": [
+      130,
+      204,
+      104
+    ],
+    "hex": "#82CC68",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Rb": {
+    "file": "Rb-Rubidium.png",
+    "rgb": [
+      187,
+      114,
+      204
+    ],
+    "hex": "#BB72CC",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Ba": {
+    "file": "Ba-Barium.png",
+    "rgb": [
+      161,
+      119,
+      196
+    ],
+    "hex": "#A177C4",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Sr": {
+    "file": "Sr-Strontium.png",
+    "rgb": [
+      212,
+      113,
+      168
+    ],
+    "hex": "#D471A8",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Ir": {
+    "file": "Ir-Iridium.png",
+    "rgb": [
+      203,
+      203,
+      210
+    ],
+    "hex": "#CBCBD2",
+    "luster_group": "mirror",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "I": {
+    "file": "I-Iodine.png",
+    "rgb": [
+      107,
+      212,
+      179
+    ],
+    "hex": "#6BD4B3",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Bh": {
+    "file": "Bh-Bohrium.png",
+    "rgb": [
+      204,
+      114,
+      116
+    ],
+    "hex": "#CC7274",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Nh": {
+    "file": "Nh-Nihonium.png",
+    "rgb": [
+      123,
+      151,
+      212
+    ],
+    "hex": "#7B97D4",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "In": {
+    "file": "In-Indium.png",
+    "rgb": [
+      219,
+      152,
+      134
+    ],
+    "hex": "#DB9886",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Rn": {
+    "file": "Rn-Radon.png",
+    "rgb": [
+      199,
+      213,
+      235
+    ],
+    "hex": "#C7D5EB",
+    "luster_group": "satin",
+    "is_colorless": true,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Am": {
+    "file": "Am-Americium.png",
+    "rgb": [
+      149,
+      96,
+      189
+    ],
+    "hex": "#9560BD",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Co": {
+    "file": "Co-Cobalt.png",
+    "rgb": [
+      179,
+      186,
+      198
+    ],
+    "hex": "#B3BAC6",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Lv": {
+    "file": "Lv-Livermorium.png",
+    "rgb": [
+      196,
+      100,
+      145
+    ],
+    "hex": "#C46491",
+    "luster_group": "satin",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  },
+  "Pb": {
+    "file": "Pb-Plumbum.png",
+    "rgb": [
+      158,
+      165,
+      180
+    ],
+    "hex": "#9EA5B4",
+    "luster_group": "dull",
+    "is_colorless": false,
+    "saturation_multiplier": 1.5,
+    "vibrance": 0.0,
+    "neutral_floor": 0.0,
+    "neutral_threshold": 0.12,
+    "sat_soft_cap": 1.0,
+    "vivid_protect_threshold": 0.92
+  }
+}

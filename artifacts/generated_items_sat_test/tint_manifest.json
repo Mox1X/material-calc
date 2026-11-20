@@ -1,0 +1,21 @@
+{
+  "composition": {
+    "input": {
+      "Fe": 0.7000000000000001,
+      "Cr": 0.20000000000000004,
+      "C": 0.10000000000000002
+    },
+    "file": "sat_test_16.png",
+    "rgb": [
+      163,
+      170,
+      176
+    ],
+    "hex": "#A3AAB0",
+    "luster_group": "satin",
+    "darkening_power": 0.055,
+    "whitening_power": 0.09,
+    "corrosion_index_0_1": 0.513,
+    "saturation_multiplier": 1.6
+  }
+}

@@ -1,0 +1,17 @@
+﻿[
+  {
+    "composition": "Fe:1.0",
+    "state": "raw",
+    "target": {"hv": 90}
+  },
+  {
+    "composition": "Fe:0.997,C:0.002,Mn:0.001",
+    "state": "raw",
+    "target": {"hv": 125}
+  },
+  {
+    "composition": "Fe:0.72,Cr:0.18,Ni:0.08,C:0.001",
+    "state": "raw",
+    "target": {"hv": 156}
+  }
+]

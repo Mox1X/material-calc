@@ -1,0 +1,900 @@
+[
+  {
+    "case": {
+      "id": "steel_auto",
+      "composition": "Fe:0.88,Cr:0.08,C:0.02,Ni:0.02",
+      "material_state": "raw",
+      "env": "air",
+      "temperature_k": 298.15,
+      "oxygen_activity": 0.21,
+      "regime_override": "auto"
+    },
+    "expected": {
+      "base_element": {
+        "symbol": "Fe",
+        "name": "Iron",
+        "fraction": 0.88
+      },
+      "composition_normalized": {
+        "Fe": 0.88,
+        "Cr": 0.08,
+        "C": 0.02,
+        "Ni": 0.02
+      },
+      "hume_rothery": {
+        "size_factor_checks": [
+          {
+            "solute_symbol": "Cr",
+            "delta_percent": 0.0,
+            "classification": "excellent",
+            "solution_mode": "substitutional"
+          },
+          {
+            "solute_symbol": "C",
+            "delta_percent": 50.0,
+            "classification": "incompatible",
+            "solution_mode": "interstitial"
+          },
+          {
+            "solute_symbol": "Ni",
+            "delta_percent": 3.571,
+            "classification": "excellent",
+            "solution_mode": "substitutional"
+          }
+        ],
+        "electronegativity_weighted_delta": 0.0296,
+        "brittle_phase_risk_index_0_1": 0.02,
+        "brittleness_index_0_1": 0.2431,
+        "substitutional_compatibility": "good",
+        "interstitial_hardening_regime": "strong_hardening",
+        "phase_instability_risk": "low",
+        "overall_compatibility": "good_solid_solution"
+      },
+      "predicted_properties": {
+        "vickers_hardness_hv": 698.34,
+        "hardening_interstitial_fraction": 0.02,
+        "hardening_substitutional_fraction": 0.1,
+        "hardening_interstitial_term": 3.0205,
+        "hardening_substitutional_term": 0.4066,
+        "titanium_alpha_beta_bonus": 1.0,
+        "precipitation_bonus_hv": 0.0,
+        "mg_alloy_bonus_hv": 0.0,
+        "refractory_composite_bonus_hv": 0.0,
+        "nickel_superalloy_bonus_hv": 0.0,
+        "carbide_bonus_hv": 192.7983,
+        "carbide_bonus_hv_effective": 192.7983,
+        "carbide_bonus_hv_raw": 192.7983,
+        "carbide_index": 0.768,
+        "effective_carbide_fraction": 0.08,
+        "carbide_cermet_mode": false,
+        "intermetallic_tial_active": false,
+        "intermetallic_tial_stoich_closeness": 0.0,
+        "cast_iron_graphite_active": false,
+        "cast_iron_graphite_index": 0.0,
+        "castability_index_0_1": 0.0,
+        "material_state": "raw",
+        "state_hardness_factor": 1.0,
+        "raw_hardness_hv_before_cap": 736.92,
+        "hardness_cap_hv": 1800.0,
+        "effective_shear_gpa": 78.849,
+        "weighted_data_quality_0_1": 0.7341,
+        "density_kg_m3": 7719.6,
+        "estimated_melting_point_k": 1760.48,
+        "eutectic_affinity_factor_0_1": 0.2019,
+        "neutron_cross_section_barn": 2.5867
+      },
+      "phase_estimate": {
+        "ferrite_matrix_fraction": 0.7492,
+        "austenite_fraction": 0.138,
+        "carbide_fraction": 0.1128,
+        "graphite_fraction": 0.0,
+        "intermetallic_fraction": 0.0,
+        "binder_fraction": 0.0
+      },
+      "corrosion_and_oxidation": {
+        "electrode_potential_spread_v": 1.532,
+        "galvanic_corrosion_risk_index_0_1": 0.6126,
+        "halogen_pitting_risk_0_1": 0.0,
+        "passivation_multiplier": 1.0,
+        "ti_passivation_multiplier": 1.0,
+        "effective_cr_percent_for_passivation": 0.0,
+        "effective_free_cr_fraction": 0.0,
+        "protective_oxide_tendency_0_1": 0.0,
+        "environment": "air",
+        "temperature_k": 298.15,
+        "oxygen_activity_0_1": 0.21
+      },
+      "model_context": {
+        "material_regime": "steel",
+        "confidence_index_0_1": 0.6991,
+        "solid_phase_feasibility_0_1": 1.0
+      },
+      "input_validity": {
+        "volatile_fraction_at_temperature": 0.0,
+        "noble_gas_fraction": 0.0,
+        "warnings": []
+      },
+      "impurity_effects": {
+        "sulfur_fraction": 0.0,
+        "phosphorus_fraction": 0.0,
+        "manganese_fraction": 0.0,
+        "cold_shortness_active": false,
+        "hot_shortness_risk_0_1": 0.0,
+        "mn_antidote_active": false
+      },
+      "notes": [
+        "Model is heuristic and tuned for gameplay-prototyping; calibrate with your target balance.",
+        "Use data_quality flags from element files to decide trust level per input property."
+      ]
+    }
+  },
+  {
+    "case": {
+      "id": "cermet_auto",
+      "composition": "W:0.7,Ti:0.1,Ta:0.1,C:0.05,Co:0.05",
+      "material_state": "raw",
+      "env": "air",
+      "temperature_k": 298.15,
+      "oxygen_activity": 0.21,
+      "regime_override": "auto"
+    },
+    "expected": {
+      "base_element": {
+        "symbol": "W",
+        "name": "Tungsten",
+        "fraction": 0.7
+      },
+      "composition_normalized": {
+        "W": 0.7,
+        "Ti": 0.1,
+        "Ta": 0.1,
+        "C": 0.05,
+        "Co": 0.05
+      },
+      "hume_rothery": {
+        "size_factor_checks": [
+          {
+            "solute_symbol": "Ti",
+            "delta_percent": 3.704,
+            "classification": "excellent",
+            "solution_mode": "substitutional"
+          },
+          {
+            "solute_symbol": "Ta",
+            "delta_percent": 7.407,
+            "classification": "excellent",
+            "solution_mode": "substitutional"
+          },
+          {
+            "solute_symbol": "C",
+            "delta_percent": 48.148,
+            "classification": "incompatible",
+            "solution_mode": "interstitial"
+          },
+          {
+            "solute_symbol": "Co",
+            "delta_percent": 0.0,
+            "classification": "excellent",
+            "solution_mode": "substitutional"
+          }
+        ],
+        "electronegativity_weighted_delta": 0.0875,
+        "brittle_phase_risk_index_0_1": 0.05,
+        "brittleness_index_0_1": 1.0,
+        "substitutional_compatibility": "good",
+        "interstitial_hardening_regime": "strong_hardening",
+        "phase_instability_risk": "high",
+        "overall_compatibility": "phase_separation_or_intermetallic_likely"
+      },
+      "predicted_properties": {
+        "vickers_hardness_hv": 1687.56,
+        "hardening_interstitial_fraction": 0.05,
+        "hardening_substitutional_fraction": 0.25,
+        "hardening_interstitial_term": 4.9574,
+        "hardening_substitutional_term": 0.8667,
+        "titanium_alpha_beta_bonus": 1.0,
+        "precipitation_bonus_hv": 0.0,
+        "mg_alloy_bonus_hv": 0.0,
+        "refractory_composite_bonus_hv": 0.0,
+        "nickel_superalloy_bonus_hv": 0.0,
+        "carbide_bonus_hv": 1355.6853,
+        "carbide_bonus_hv_effective": 1355.6853,
+        "carbide_bonus_hv_raw": 1355.6853,
+        "carbide_index": 46.25,
+        "effective_carbide_fraction": 0.25,
+        "carbide_cermet_mode": true,
+        "intermetallic_tial_active": false,
+        "intermetallic_tial_stoich_closeness": 0.0,
+        "cast_iron_graphite_active": false,
+        "cast_iron_graphite_index": 0.0,
+        "castability_index_0_1": 0.0,
+        "material_state": "raw",
+        "state_hardness_factor": 1.0,
+        "raw_hardness_hv_before_cap": 3151.54,
+        "hardness_cap_hv": 1900.0,
+        "effective_shear_gpa": 87.823,
+        "weighted_data_quality_0_1": 0.7341,
+        "density_kg_m3": 12033.15,
+        "estimated_melting_point_k": 2605.7,
+        "eutectic_affinity_factor_0_1": 0.38,
+        "neutron_cross_section_barn": 17.3382
+      },
+      "phase_estimate": {
+        "ferrite_matrix_fraction": 0.0,
+        "austenite_fraction": 0.0,
+        "carbide_fraction": 0.95,
+        "graphite_fraction": 0.0,
+        "intermetallic_fraction": 0.0,
+        "binder_fraction": 0.05
+      },
+      "corrosion_and_oxidation": {
+        "electrode_potential_spread_v": 1.342,
+        "galvanic_corrosion_risk_index_0_1": 0.4487,
+        "halogen_pitting_risk_0_1": 0.0,
+        "passivation_multiplier": 1.0,
+        "ti_passivation_multiplier": 1.0,
+        "effective_cr_percent_for_passivation": 0.0,
+        "effective_free_cr_fraction": 0.0,
+        "protective_oxide_tendency_0_1": 0.2,
+        "environment": "air",
+        "temperature_k": 298.15,
+        "oxygen_activity_0_1": 0.21
+      },
+      "model_context": {
+        "material_regime": "cermet",
+        "confidence_index_0_1": 0.5441,
+        "solid_phase_feasibility_0_1": 1.0
+      },
+      "input_validity": {
+        "volatile_fraction_at_temperature": 0.0,
+        "noble_gas_fraction": 0.0,
+        "warnings": []
+      },
+      "impurity_effects": {
+        "sulfur_fraction": 0.0,
+        "phosphorus_fraction": 0.0,
+        "manganese_fraction": 0.0,
+        "cold_shortness_active": false,
+        "hot_shortness_risk_0_1": 0.0,
+        "mn_antidote_active": false
+      },
+      "notes": [
+        "Model is heuristic and tuned for gameplay-prototyping; calibrate with your target balance.",
+        "Use data_quality flags from element files to decide trust level per input property."
+      ]
+    }
+  },
+  {
+    "case": {
+      "id": "cast_iron_auto",
+      "composition": "Fe:0.84,C:0.1,Si:0.04,Mn:0.02",
+      "material_state": "raw",
+      "env": "air",
+      "temperature_k": 298.15,
+      "oxygen_activity": 0.21,
+      "regime_override": "auto"
+    },
+    "expected": {
+      "base_element": {
+        "symbol": "Fe",
+        "name": "Iron",
+        "fraction": 0.84
+      },
+      "composition_normalized": {
+        "Fe": 0.84,
+        "C": 0.1,
+        "Si": 0.04,
+        "Mn": 0.02
+      },
+      "hume_rothery": {
+        "size_factor_checks": [
+          {
+            "solute_symbol": "C",
+            "delta_percent": 50.0,
+            "classification": "incompatible",
+            "solution_mode": "interstitial"
+          },
+          {
+            "solute_symbol": "Si",
+            "delta_percent": 21.429,
+            "classification": "incompatible",
+            "solution_mode": "substitutional"
+          },
+          {
+            "solute_symbol": "Mn",
+            "delta_percent": 0.0,
+            "classification": "excellent",
+            "solution_mode": "substitutional"
+          }
+        ],
+        "electronegativity_weighted_delta": 0.0804,
+        "brittle_phase_risk_index_0_1": 0.1,
+        "brittleness_index_0_1": 1.0,
+        "substitutional_compatibility": "limited_or_phase_split",
+        "interstitial_hardening_regime": "strong_hardening",
+        "phase_instability_risk": "high",
+        "overall_compatibility": "phase_separation_or_intermetallic_likely"
+      },
+      "predicted_properties": {
+        "vickers_hardness_hv": 321.84,
+        "hardening_interstitial_fraction": 0.1,
+        "hardening_substitutional_fraction": 0.06,
+        "hardening_interstitial_term": 5.8188,
+        "hardening_substitutional_term": 0.7139,
+        "titanium_alpha_beta_bonus": 1.0,
+        "precipitation_bonus_hv": 0.0,
+        "mg_alloy_bonus_hv": 0.0,
+        "refractory_composite_bonus_hv": 0.0,
+        "nickel_superalloy_bonus_hv": 0.0,
+        "carbide_bonus_hv": 0.0,
+        "carbide_bonus_hv_effective": 0.0,
+        "carbide_bonus_hv_raw": 0.0,
+        "carbide_index": 0.0,
+        "effective_carbide_fraction": 0.0,
+        "carbide_cermet_mode": false,
+        "intermetallic_tial_active": false,
+        "intermetallic_tial_stoich_closeness": 0.0,
+        "cast_iron_graphite_active": true,
+        "cast_iron_graphite_index": 1.0,
+        "castability_index_0_1": 1.0,
+        "material_state": "raw",
+        "state_hardness_factor": 1.0,
+        "raw_hardness_hv_before_cap": 1236.47,
+        "hardness_cap_hv": 1800.0,
+        "effective_shear_gpa": 70.954,
+        "weighted_data_quality_0_1": 0.7335,
+        "density_kg_m3": 7069.98,
+        "estimated_melting_point_k": 1691.45,
+        "eutectic_affinity_factor_0_1": 0.3721,
+        "neutron_cross_section_barn": 2.4236
+      },
+      "phase_estimate": {
+        "ferrite_matrix_fraction": 0.52,
+        "austenite_fraction": 0.0,
+        "carbide_fraction": 0.05,
+        "graphite_fraction": 0.43,
+        "intermetallic_fraction": 0.0,
+        "binder_fraction": 0.0
+      },
+      "corrosion_and_oxidation": {
+        "electrode_potential_spread_v": 1.532,
+        "galvanic_corrosion_risk_index_0_1": 0.5827,
+        "halogen_pitting_risk_0_1": 0.0,
+        "passivation_multiplier": 1.0,
+        "ti_passivation_multiplier": 1.0,
+        "effective_cr_percent_for_passivation": 0.0,
+        "effective_free_cr_fraction": 0.0,
+        "protective_oxide_tendency_0_1": 0.0,
+        "environment": "air",
+        "temperature_k": 298.15,
+        "oxygen_activity_0_1": 0.21
+      },
+      "model_context": {
+        "material_regime": "cast_iron",
+        "confidence_index_0_1": 0.5785,
+        "solid_phase_feasibility_0_1": 1.0
+      },
+      "input_validity": {
+        "volatile_fraction_at_temperature": 0.0,
+        "noble_gas_fraction": 0.0,
+        "warnings": []
+      },
+      "impurity_effects": {
+        "sulfur_fraction": 0.0,
+        "phosphorus_fraction": 0.0,
+        "manganese_fraction": 0.02,
+        "cold_shortness_active": false,
+        "hot_shortness_risk_0_1": 0.0,
+        "mn_antidote_active": false
+      },
+      "notes": [
+        "Model is heuristic and tuned for gameplay-prototyping; calibrate with your target balance.",
+        "Use data_quality flags from element files to decide trust level per input property."
+      ]
+    }
+  },
+  {
+    "case": {
+      "id": "steel_override_on_cermet_mix",
+      "composition": "W:0.7,Ti:0.1,Ta:0.1,C:0.05,Co:0.05",
+      "material_state": "raw",
+      "env": "air",
+      "temperature_k": 298.15,
+      "oxygen_activity": 0.21,
+      "regime_override": "steel"
+    },
+    "expected": {
+      "base_element": {
+        "symbol": "W",
+        "name": "Tungsten",
+        "fraction": 0.7
+      },
+      "composition_normalized": {
+        "W": 0.7,
+        "Ti": 0.1,
+        "Ta": 0.1,
+        "C": 0.05,
+        "Co": 0.05
+      },
+      "hume_rothery": {
+        "size_factor_checks": [
+          {
+            "solute_symbol": "Ti",
+            "delta_percent": 3.704,
+            "classification": "excellent",
+            "solution_mode": "substitutional"
+          },
+          {
+            "solute_symbol": "Ta",
+            "delta_percent": 7.407,
+            "classification": "excellent",
+            "solution_mode": "substitutional"
+          },
+          {
+            "solute_symbol": "C",
+            "delta_percent": 48.148,
+            "classification": "incompatible",
+            "solution_mode": "interstitial"
+          },
+          {
+            "solute_symbol": "Co",
+            "delta_percent": 0.0,
+            "classification": "excellent",
+            "solution_mode": "substitutional"
+          }
+        ],
+        "electronegativity_weighted_delta": 0.0875,
+        "brittle_phase_risk_index_0_1": 0.05,
+        "brittleness_index_0_1": 1.0,
+        "substitutional_compatibility": "good",
+        "interstitial_hardening_regime": "strong_hardening",
+        "phase_instability_risk": "high",
+        "overall_compatibility": "phase_separation_or_intermetallic_likely"
+      },
+      "predicted_properties": {
+        "vickers_hardness_hv": 1633.71,
+        "hardening_interstitial_fraction": 0.05,
+        "hardening_substitutional_fraction": 0.25,
+        "hardening_interstitial_term": 4.9574,
+        "hardening_substitutional_term": 0.8667,
+        "titanium_alpha_beta_bonus": 1.0,
+        "precipitation_bonus_hv": 0.0,
+        "mg_alloy_bonus_hv": 0.0,
+        "refractory_composite_bonus_hv": 685.2963,
+        "nickel_superalloy_bonus_hv": 0.0,
+        "carbide_bonus_hv": 243.7161,
+        "carbide_bonus_hv_effective": 243.7161,
+        "carbide_bonus_hv_raw": 243.7161,
+        "carbide_index": 46.25,
+        "effective_carbide_fraction": 0.25,
+        "carbide_cermet_mode": false,
+        "intermetallic_tial_active": false,
+        "intermetallic_tial_stoich_closeness": 0.0,
+        "cast_iron_graphite_active": false,
+        "cast_iron_graphite_index": 0.0,
+        "castability_index_0_1": 0.0,
+        "material_state": "raw",
+        "state_hardness_factor": 1.0,
+        "raw_hardness_hv_before_cap": 2724.87,
+        "hardness_cap_hv": 1800.0,
+        "effective_shear_gpa": 87.823,
+        "weighted_data_quality_0_1": 0.7341,
+        "density_kg_m3": 16153.6,
+        "estimated_melting_point_k": 3193.18,
+        "eutectic_affinity_factor_0_1": 0.38,
+        "neutron_cross_section_barn": 17.3382
+      },
+      "phase_estimate": {
+        "ferrite_matrix_fraction": 0.48,
+        "austenite_fraction": 0.17,
+        "carbide_fraction": 0.35,
+        "graphite_fraction": 0.0,
+        "intermetallic_fraction": 0.0,
+        "binder_fraction": 0.0
+      },
+      "corrosion_and_oxidation": {
+        "electrode_potential_spread_v": 1.342,
+        "galvanic_corrosion_risk_index_0_1": 0.4487,
+        "halogen_pitting_risk_0_1": 0.0,
+        "passivation_multiplier": 1.0,
+        "ti_passivation_multiplier": 1.0,
+        "effective_cr_percent_for_passivation": 0.0,
+        "effective_free_cr_fraction": 0.0,
+        "protective_oxide_tendency_0_1": 0.2,
+        "environment": "air",
+        "temperature_k": 298.15,
+        "oxygen_activity_0_1": 0.21
+      },
+      "model_context": {
+        "material_regime": "steel",
+        "confidence_index_0_1": 0.6641,
+        "solid_phase_feasibility_0_1": 1.0
+      },
+      "input_validity": {
+        "volatile_fraction_at_temperature": 0.0,
+        "noble_gas_fraction": 0.0,
+        "warnings": []
+      },
+      "impurity_effects": {
+        "sulfur_fraction": 0.0,
+        "phosphorus_fraction": 0.0,
+        "manganese_fraction": 0.0,
+        "cold_shortness_active": false,
+        "hot_shortness_risk_0_1": 0.0,
+        "mn_antidote_active": false
+      },
+      "notes": [
+        "Model is heuristic and tuned for gameplay-prototyping; calibrate with your target balance.",
+        "Use data_quality flags from element files to decide trust level per input property."
+      ]
+    }
+  },
+  {
+    "case": {
+      "id": "infeasible_cermet_override",
+      "composition": "Fe:0.9,C:0.1",
+      "material_state": "raw",
+      "env": "air",
+      "temperature_k": 298.15,
+      "oxygen_activity": 0.21,
+      "regime_override": "cermet"
+    },
+    "expected": {
+      "base_element": {
+        "symbol": "Fe",
+        "name": "Iron",
+        "fraction": 0.9
+      },
+      "composition_normalized": {
+        "Fe": 0.9,
+        "C": 0.1
+      },
+      "hume_rothery": {
+        "size_factor_checks": [
+          {
+            "solute_symbol": "C",
+            "delta_percent": 50.0,
+            "classification": "incompatible",
+            "solution_mode": "interstitial"
+          }
+        ],
+        "electronegativity_weighted_delta": 0.072,
+        "brittle_phase_risk_index_0_1": 0.1,
+        "brittleness_index_0_1": 1.0,
+        "substitutional_compatibility": "good",
+        "interstitial_hardening_regime": "strong_hardening",
+        "phase_instability_risk": "high",
+        "overall_compatibility": "phase_separation_or_intermetallic_likely"
+      },
+      "predicted_properties": {
+        "vickers_hardness_hv": 221.88,
+        "hardening_interstitial_fraction": 0.1,
+        "hardening_substitutional_fraction": 0.0,
+        "hardening_interstitial_term": 5.8188,
+        "hardening_substitutional_term": 0.0,
+        "titanium_alpha_beta_bonus": 1.0,
+        "precipitation_bonus_hv": 0.0,
+        "mg_alloy_bonus_hv": 0.0,
+        "refractory_composite_bonus_hv": 0.0,
+        "nickel_superalloy_bonus_hv": 0.0,
+        "carbide_bonus_hv": 0.0,
+        "carbide_bonus_hv_effective": 0.0,
+        "carbide_bonus_hv_raw": 0.0,
+        "carbide_index": 0.0,
+        "effective_carbide_fraction": 0.0,
+        "carbide_cermet_mode": false,
+        "intermetallic_tial_active": false,
+        "intermetallic_tial_stoich_closeness": 0.0,
+        "cast_iron_graphite_active": true,
+        "cast_iron_graphite_index": 1.0,
+        "castability_index_0_1": 1.0,
+        "material_state": "raw",
+        "state_hardness_factor": 0.78,
+        "raw_hardness_hv_before_cap": 786.04,
+        "hardness_cap_hv": 1800.0,
+        "effective_shear_gpa": 73.937,
+        "weighted_data_quality_0_1": 0.7341,
+        "density_kg_m3": 7303.0,
+        "estimated_melting_point_k": 1818.65,
+        "eutectic_affinity_factor_0_1": 0.1746,
+        "neutron_cross_section_barn": 2.3044
+      },
+      "phase_estimate": {
+        "ferrite_matrix_fraction": 0.52,
+        "austenite_fraction": 0.0,
+        "carbide_fraction": 0.05,
+        "graphite_fraction": 0.43,
+        "intermetallic_fraction": 0.0,
+        "binder_fraction": 0.0
+      },
+      "corrosion_and_oxidation": {
+        "electrode_potential_spread_v": 1.532,
+        "galvanic_corrosion_risk_index_0_1": 0.5904,
+        "halogen_pitting_risk_0_1": 0.0,
+        "passivation_multiplier": 1.0,
+        "ti_passivation_multiplier": 1.0,
+        "effective_cr_percent_for_passivation": 0.0,
+        "effective_free_cr_fraction": 0.0,
+        "protective_oxide_tendency_0_1": 0.0,
+        "environment": "air",
+        "temperature_k": 298.15,
+        "oxygen_activity_0_1": 0.21
+      },
+      "model_context": {
+        "material_regime": "cast_iron",
+        "confidence_index_0_1": 0.6141,
+        "solid_phase_feasibility_0_1": 1.0
+      },
+      "input_validity": {
+        "volatile_fraction_at_temperature": 0.0,
+        "noble_gas_fraction": 0.0,
+        "warnings": [
+          "Requested regime 'cermet' is chemically infeasible for this composition; reverted to auto regime."
+        ]
+      },
+      "impurity_effects": {
+        "sulfur_fraction": 0.0,
+        "phosphorus_fraction": 0.0,
+        "manganese_fraction": 0.0,
+        "cold_shortness_active": false,
+        "hot_shortness_risk_0_1": 0.0,
+        "mn_antidote_active": false
+      },
+      "notes": [
+        "Model is heuristic and tuned for gameplay-prototyping; calibrate with your target balance.",
+        "Use data_quality flags from element files to decide trust level per input property."
+      ]
+    }
+  },
+  {
+    "case": {
+      "id": "al_nonferrous",
+      "composition": "Al:0.9,Cu:0.07,Mg:0.03",
+      "material_state": "tempered",
+      "env": "water",
+      "temperature_k": 320.0,
+      "oxygen_activity": 0.5,
+      "regime_override": "auto"
+    },
+    "expected": {
+      "base_element": {
+        "symbol": "Al",
+        "name": "Aluminum",
+        "fraction": 0.9
+      },
+      "composition_normalized": {
+        "Al": 0.9,
+        "Cu": 0.07,
+        "Mg": 0.03
+      },
+      "hume_rothery": {
+        "size_factor_checks": [
+          {
+            "solute_symbol": "Cu",
+            "delta_percent": 2.4,
+            "classification": "excellent",
+            "solution_mode": "substitutional"
+          },
+          {
+            "solute_symbol": "Mg",
+            "delta_percent": 20.0,
+            "classification": "incompatible",
+            "solution_mode": "substitutional"
+          }
+        ],
+        "electronegativity_weighted_delta": 0.0293,
+        "brittle_phase_risk_index_0_1": 0.0,
+        "brittleness_index_0_1": 0.0187,
+        "substitutional_compatibility": "limited_or_phase_split",
+        "interstitial_hardening_regime": "neutral",
+        "phase_instability_risk": "low",
+        "overall_compatibility": "phase_separation_or_intermetallic_likely"
+      },
+      "predicted_properties": {
+        "vickers_hardness_hv": 151.12,
+        "hardening_interstitial_fraction": 0.0,
+        "hardening_substitutional_fraction": 0.1,
+        "hardening_interstitial_term": 0.0,
+        "hardening_substitutional_term": 0.6709,
+        "titanium_alpha_beta_bonus": 1.0,
+        "precipitation_bonus_hv": 127.5,
+        "mg_alloy_bonus_hv": 0.0,
+        "refractory_composite_bonus_hv": 0.0,
+        "nickel_superalloy_bonus_hv": 0.0,
+        "carbide_bonus_hv": 0.0,
+        "carbide_bonus_hv_effective": 0.0,
+        "carbide_bonus_hv_raw": 0.0,
+        "carbide_index": 0.0,
+        "effective_carbide_fraction": 0.0,
+        "carbide_cermet_mode": false,
+        "intermetallic_tial_active": false,
+        "intermetallic_tial_stoich_closeness": 0.0,
+        "cast_iron_graphite_active": false,
+        "cast_iron_graphite_index": 0.0,
+        "castability_index_0_1": 0.0,
+        "material_state": "tempered",
+        "state_hardness_factor": 1.0,
+        "raw_hardness_hv_before_cap": 151.48,
+        "hardness_cap_hv": 1800.0,
+        "effective_shear_gpa": 11.829,
+        "weighted_data_quality_0_1": 0.7341,
+        "density_kg_m3": 3109.4,
+        "estimated_melting_point_k": 936.36,
+        "eutectic_affinity_factor_0_1": 0.1222,
+        "neutron_cross_section_barn": 0.4744
+      },
+      "phase_estimate": {
+        "ferrite_matrix_fraction": 1.0,
+        "austenite_fraction": 0.0,
+        "carbide_fraction": 0.0,
+        "graphite_fraction": 0.0,
+        "intermetallic_fraction": 0.0,
+        "binder_fraction": 0.0
+      },
+      "corrosion_and_oxidation": {
+        "electrode_potential_spread_v": 2.351,
+        "galvanic_corrosion_risk_index_0_1": 0.3081,
+        "halogen_pitting_risk_0_1": 0.0,
+        "passivation_multiplier": 0.2975,
+        "ti_passivation_multiplier": 1.0,
+        "effective_cr_percent_for_passivation": 0.0,
+        "effective_free_cr_fraction": 0.0,
+        "protective_oxide_tendency_0_1": 0.1,
+        "environment": "water",
+        "temperature_k": 320.0,
+        "oxygen_activity_0_1": 0.5
+      },
+      "model_context": {
+        "material_regime": "nonferrous",
+        "confidence_index_0_1": 0.7341,
+        "solid_phase_feasibility_0_1": 1.0
+      },
+      "input_validity": {
+        "volatile_fraction_at_temperature": 0.0,
+        "noble_gas_fraction": 0.0,
+        "warnings": []
+      },
+      "impurity_effects": {
+        "sulfur_fraction": 0.0,
+        "phosphorus_fraction": 0.0,
+        "manganese_fraction": 0.0,
+        "cold_shortness_active": false,
+        "hot_shortness_risk_0_1": 0.0,
+        "mn_antidote_active": false
+      },
+      "notes": [
+        "Model is heuristic and tuned for gameplay-prototyping; calibrate with your target balance.",
+        "Use data_quality flags from element files to decide trust level per input property."
+      ]
+    }
+  },
+  {
+    "case": {
+      "id": "ti_alloy",
+      "composition": "Ti:0.88,Al:0.06,V:0.05,O:0.01",
+      "material_state": "quenched",
+      "env": "air",
+      "temperature_k": 350.0,
+      "oxygen_activity": 0.3,
+      "regime_override": "auto"
+    },
+    "expected": {
+      "base_element": {
+        "symbol": "Ti",
+        "name": "Titanium",
+        "fraction": 0.88
+      },
+      "composition_normalized": {
+        "Ti": 0.88,
+        "Al": 0.06,
+        "V": 0.05,
+        "O": 0.01
+      },
+      "hume_rothery": {
+        "size_factor_checks": [
+          {
+            "solute_symbol": "Al",
+            "delta_percent": 10.714,
+            "classification": "limited",
+            "solution_mode": "substitutional"
+          },
+          {
+            "solute_symbol": "V",
+            "delta_percent": 3.571,
+            "classification": "excellent",
+            "solution_mode": "substitutional"
+          },
+          {
+            "solute_symbol": "O",
+            "delta_percent": 57.143,
+            "classification": "incompatible",
+            "solution_mode": "interstitial"
+          }
+        ],
+        "electronegativity_weighted_delta": 0.0277,
+        "brittle_phase_risk_index_0_1": 0.01,
+        "brittleness_index_0_1": 0.02,
+        "substitutional_compatibility": "limited",
+        "interstitial_hardening_regime": "moderate_hardening",
+        "phase_instability_risk": "low",
+        "overall_compatibility": "limited_solid_solution"
+      },
+      "predicted_properties": {
+        "vickers_hardness_hv": 1320.56,
+        "hardening_interstitial_fraction": 0.01,
+        "hardening_substitutional_fraction": 0.11,
+        "hardening_interstitial_term": 1.7719,
+        "hardening_substitutional_term": 0.6952,
+        "titanium_alpha_beta_bonus": 3.0,
+        "precipitation_bonus_hv": 0.0,
+        "mg_alloy_bonus_hv": 0.0,
+        "refractory_composite_bonus_hv": 0.0,
+        "nickel_superalloy_bonus_hv": 0.0,
+        "carbide_bonus_hv": 0.0,
+        "carbide_bonus_hv_effective": 0.0,
+        "carbide_bonus_hv_raw": 0.0,
+        "carbide_index": 0.0,
+        "effective_carbide_fraction": 0.0,
+        "carbide_cermet_mode": false,
+        "intermetallic_tial_active": false,
+        "intermetallic_tial_stoich_closeness": 0.0,
+        "cast_iron_graphite_active": false,
+        "cast_iron_graphite_index": 0.0,
+        "castability_index_0_1": 0.0,
+        "material_state": "quenched",
+        "state_hardness_factor": 1.0,
+        "raw_hardness_hv_before_cap": 1685.84,
+        "hardness_cap_hv": 1800.0,
+        "effective_shear_gpa": 48.509,
+        "weighted_data_quality_0_1": 0.7341,
+        "density_kg_m3": 4440.36,
+        "estimated_melting_point_k": 1575.53,
+        "eutectic_affinity_factor_0_1": 0.2303,
+        "neutron_cross_section_barn": 5.6271
+      },
+      "phase_estimate": {
+        "ferrite_matrix_fraction": 1.0,
+        "austenite_fraction": 0.0,
+        "carbide_fraction": 0.0,
+        "graphite_fraction": 0.0,
+        "intermetallic_fraction": 0.0,
+        "binder_fraction": 0.0
+      },
+      "corrosion_and_oxidation": {
+        "electrode_potential_spread_v": 2.506,
+        "galvanic_corrosion_risk_index_0_1": 0.1327,
+        "halogen_pitting_risk_0_1": 0.0,
+        "passivation_multiplier": 0.2,
+        "ti_passivation_multiplier": 0.2,
+        "effective_cr_percent_for_passivation": 0.0,
+        "effective_free_cr_fraction": 0.0,
+        "protective_oxide_tendency_0_1": 0.0,
+        "environment": "air",
+        "temperature_k": 350.0,
+        "oxygen_activity_0_1": 0.3
+      },
+      "model_context": {
+        "material_regime": "nonferrous",
+        "confidence_index_0_1": 0.6991,
+        "solid_phase_feasibility_0_1": 0.982
+      },
+      "input_validity": {
+        "volatile_fraction_at_temperature": 0.01,
+        "noble_gas_fraction": 0.0,
+        "warnings": []
+      },
+      "impurity_effects": {
+        "sulfur_fraction": 0.0,
+        "phosphorus_fraction": 0.0,
+        "manganese_fraction": 0.0,
+        "cold_shortness_active": false,
+        "hot_shortness_risk_0_1": 0.0,
+        "mn_antidote_active": false
+      },
+      "notes": [
+        "Model is heuristic and tuned for gameplay-prototyping; calibrate with your target balance.",
+        "Use data_quality flags from element files to decide trust level per input property."
+      ]
+    }
+  }
+]

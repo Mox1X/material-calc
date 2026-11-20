@@ -1,0 +1,125 @@
+{
+  "id": "oxygen",
+  "symbol": "O",
+  "name": "Oxygen",
+  "identification": {
+    "atomic_number": 8,
+    "atomic_mass": 15.999,
+    "density_solid_kg_m3": 1308.0
+  },
+  "crystallography": {
+    "crystal_structure_rt": "CUB",
+    "allotropic_transformations": [
+      {
+        "temp_K": 298,
+        "structure": "CUB"
+      }
+    ]
+  },
+  "geometry": {
+    "atomic_radius_pm": 60.0,
+    "covalent_radius_pm": 66.0
+  },
+  "elastic": {
+    "young_GPa": 2.0,
+    "shear_GPa": 0.82,
+    "bulk_GPa": 1.19,
+    "poisson_ratio": 0.22
+  },
+  "thermal": {
+    "melting_point_K": 54.359999999999985,
+    "boiling_point_K": 90.18799999999999,
+    "thermal_conductivity_W_mK": 0.027,
+    "specific_heat_capacity_J_kgK": 918.0
+  },
+  "electrical": {
+    "electrical_resistivity_Ohm_m": 0.005311363636,
+    "temp_res_coefficient_1_K": -0.002
+  },
+  "chemical": {
+    "electronegativity_pauling": 3.44,
+    "standard_electrode_potential_V": 1.8,
+    "oxide_formation_energy_kJ_mol": -20.0,
+    "valence_states": [
+      -2
+    ]
+  },
+  "nuclear": {
+    "neutron_cross_section_barn": 0.00019
+  },
+  "visual": {
+    "color_rgb": [
+      210,
+      230,
+      255
+    ],
+    "color_power": 1.0,
+    "darkening_power": 0.0,
+    "whitening_power": 0.0,
+    "roughness_bias": 0.0,
+    "is_colorless": false,
+    "container_tint_rgb": [
+      210,
+      230,
+      255
+    ],
+    "luster_group": "satin"
+  },
+  "data_quality": {
+    "identification": {
+      "atomic_number": "reference",
+      "atomic_mass": "reference",
+      "density_solid_kg_m3": "reference"
+    },
+    "crystallography": {
+      "crystal_structure_rt": "reference",
+      "allotropic_transformations": "unknown"
+    },
+    "geometry": {
+      "atomic_radius_pm": "reference",
+      "covalent_radius_pm": "reference"
+    },
+    "elastic": {
+      "young_GPa": "unknown",
+      "shear_GPa": "unknown",
+      "bulk_GPa": "unknown",
+      "poisson_ratio": "unknown"
+    },
+    "thermal": {
+      "melting_point_K": "reference",
+      "boiling_point_K": "reference",
+      "thermal_conductivity_W_mK": "reference",
+      "specific_heat_capacity_J_kgK": "reference"
+    },
+    "electrical": {
+      "electrical_resistivity_Ohm_m": "unknown",
+      "temp_res_coefficient_1_K": "unknown"
+    },
+    "chemical": {
+      "electronegativity_pauling": "reference",
+      "standard_electrode_potential_V": "unknown",
+      "oxide_formation_energy_kJ_mol": "unknown",
+      "valence_states": "reference"
+    },
+    "nuclear": {
+      "neutron_cross_section_barn": "reference"
+    }
+  },
+  "source_notes": {
+    "field_sources": {
+      "identification.atomic_number": "mendeleev",
+      "identification.atomic_mass": "mendeleev",
+      "identification.density_solid_kg_m3": "mendeleev",
+      "geometry.atomic_radius_pm": "mendeleev",
+      "geometry.covalent_radius_pm": "mendeleev",
+      "crystallography.crystal_structure_rt": "mendeleev",
+      "thermal.melting_point_K": "mendeleev",
+      "thermal.boiling_point_K": "mendeleev",
+      "thermal.thermal_conductivity_W_mK": "mendeleev",
+      "thermal.specific_heat_capacity_J_kgK": "mendeleev",
+      "chemical.electronegativity_pauling": "mendeleev",
+      "chemical.valence_states": "mendeleev",
+      "nuclear.neutron_cross_section_barn": "periodictable"
+    }
+  }
+}

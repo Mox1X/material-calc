@@ -1,0 +1,2619 @@
+{
+  "created_at_utc": "20260415T172801Z",
+  "source_dir": "/home/mox1x/Рабочий стол/material calc./elements",
+  "entries": {
+    "Ac": {
+      "file": "Ac-Actinium.json",
+      "name": "Actinium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Ag": {
+      "file": "Ag-Argentum.json",
+      "name": "Silver",
+      "visual": {
+        "color_rgb": [
+          240,
+          245,
+          255
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.35,
+        "roughness_bias": -0.25,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          240,
+          245,
+          255
+        ],
+        "luster_group": "mirror"
+      }
+    },
+    "Al": {
+      "file": "Al-Aluminum.json",
+      "name": "Aluminum",
+      "visual": {
+        "color_rgb": [
+          240,
+          245,
+          255
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.25,
+        "roughness_bias": -0.2,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          240,
+          245,
+          255
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Am": {
+      "file": "Am-Americium.json",
+      "name": "Americium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Ar": {
+      "file": "Ar-Argon.json",
+      "name": "Argon",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": true,
+        "container_tint_rgb": [
+          210,
+          220,
+          235
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "As": {
+      "file": "As-Arsenic.json",
+      "name": "Arsenic",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "At": {
+      "file": "At-Astatine.json",
+      "name": "Astatine",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Au": {
+      "file": "Au-Aurum.json",
+      "name": "Gold",
+      "visual": {
+        "color_rgb": [
+          255,
+          215,
+          0
+        ],
+        "color_power": 8.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          255,
+          215,
+          0
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "B": {
+      "file": "B-Boron.json",
+      "name": "Boron",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Ba": {
+      "file": "Ba-Barium.json",
+      "name": "Barium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Be": {
+      "file": "Be-Beryllium.json",
+      "name": "Beryllium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Bh": {
+      "file": "Bh-Bohrium.json",
+      "name": "Bohrium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Bi": {
+      "file": "Bi-Bismuth.json",
+      "name": "Bismuth",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "dull"
+      }
+    },
+    "Bk": {
+      "file": "Bk-Berkelium.json",
+      "name": "Berkelium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Br": {
+      "file": "Br-Bromine.json",
+      "name": "Bromine",
+      "visual": {
+        "color_rgb": [
+          200,
+          180,
+          50
+        ],
+        "color_power": 4.0,
+        "darkening_power": 0.35,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          200,
+          180,
+          50
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "C": {
+      "file": "C-Carbon.json",
+      "name": "Carbon",
+      "visual": {
+        "color_rgb": [
+          70,
+          70,
+          72
+        ],
+        "color_power": 4.0,
+        "darkening_power": 0.55,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.25,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          70,
+          70,
+          72
+        ],
+        "allotrope_overrides": {
+          "graphite_rgb": [
+            54,
+            56,
+            60
+          ],
+          "diamond_rgb": [
+            210,
+            245,
+            255
+          ],
+          "amorphous_rgb": [
+            35,
+            35,
+            35
+          ]
+        },
+        "luster_group": "greasy"
+      }
+    },
+    "Ca": {
+      "file": "Ca-Calcium.json",
+      "name": "Calcium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Cd": {
+      "file": "Cd-Cadmium.json",
+      "name": "Cadmium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Ce": {
+      "file": "Ce-Cerium.json",
+      "name": "Cerium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Cf": {
+      "file": "Cf-Californium.json",
+      "name": "Californium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Cl": {
+      "file": "Cl-Chlorine.json",
+      "name": "Chlorine",
+      "visual": {
+        "color_rgb": [
+          210,
+          235,
+          140
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          210,
+          235,
+          140
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Cm": {
+      "file": "Cm-Curium.json",
+      "name": "Curium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Cn": {
+      "file": "Cn-Copernicium.json",
+      "name": "Copernicium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Co": {
+      "file": "Co-Cobalt.json",
+      "name": "Cobalt",
+      "visual": {
+        "color_rgb": [
+          185,
+          190,
+          198
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          185,
+          190,
+          198
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Cr": {
+      "file": "Cr-Chromium.json",
+      "name": "Chromium",
+      "visual": {
+        "color_rgb": [
+          190,
+          195,
+          200
+        ],
+        "color_power": 3.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.45,
+        "roughness_bias": -0.2,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          190,
+          195,
+          200
+        ],
+        "luster_group": "mirror"
+      }
+    },
+    "Cs": {
+      "file": "Cs-Cesium.json",
+      "name": "Cesium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Cu": {
+      "file": "Cu-Cuprum.json",
+      "name": "Copper",
+      "visual": {
+        "color_rgb": [
+          255,
+          140,
+          110
+        ],
+        "color_power": 8.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          255,
+          140,
+          110
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Db": {
+      "file": "Db-Dubnium.json",
+      "name": "Dubnium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Ds": {
+      "file": "Ds-Darmstadtium.json",
+      "name": "Darmstadtium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Dy": {
+      "file": "Dy-Dysprosium.json",
+      "name": "Dysprosium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Er": {
+      "file": "Er-Erbium.json",
+      "name": "Erbium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Es": {
+      "file": "Es-Einsteinium.json",
+      "name": "Einsteinium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Eu": {
+      "file": "Eu-Europium.json",
+      "name": "Europium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "F": {
+      "file": "F-Fluorine.json",
+      "name": "Fluorine",
+      "visual": {
+        "color_rgb": [
+          220,
+          245,
+          200
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          220,
+          245,
+          200
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Fe": {
+      "file": "Fe-Ferrum.json",
+      "name": "Iron",
+      "visual": {
+        "color_rgb": [
+          190,
+          195,
+          200
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          190,
+          195,
+          200
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Fl": {
+      "file": "Fl-Flerovium.json",
+      "name": "Flerovium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Fm": {
+      "file": "Fm-Fermium.json",
+      "name": "Fermium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Fr": {
+      "file": "Fr-Francium.json",
+      "name": "Francium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Ga": {
+      "file": "Ga-Gallium.json",
+      "name": "Gallium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Gd": {
+      "file": "Gd-Gadolinium.json",
+      "name": "Gadolinium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Ge": {
+      "file": "Ge-Germanium.json",
+      "name": "Germanium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "H": {
+      "file": "H-Hydrogen.json",
+      "name": "Hydrogen",
+      "visual": {
+        "color_rgb": [
+          235,
+          240,
+          245
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          235,
+          240,
+          245
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "He": {
+      "file": "He-Helium.json",
+      "name": "Helium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": true,
+        "container_tint_rgb": [
+          210,
+          220,
+          235
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Hf": {
+      "file": "Hf-Hafnium.json",
+      "name": "Hafnium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Hg": {
+      "file": "Hg-Hydrargyrum.json",
+      "name": "Mercury",
+      "visual": {
+        "color_rgb": [
+          185,
+          190,
+          200
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          185,
+          190,
+          200
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Ho": {
+      "file": "Ho-Holmium.json",
+      "name": "Holmium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Hs": {
+      "file": "Hs-Hassium.json",
+      "name": "Hassium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "I": {
+      "file": "I-Iodine.json",
+      "name": "Iodine",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "In": {
+      "file": "In-Indium.json",
+      "name": "Indium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Ir": {
+      "file": "Ir-Iridium.json",
+      "name": "Iridium",
+      "visual": {
+        "color_rgb": [
+          205,
+          205,
+          210
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          205,
+          205,
+          210
+        ],
+        "luster_group": "mirror"
+      }
+    },
+    "K": {
+      "file": "K-Kalium.json",
+      "name": "Potassium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Kr": {
+      "file": "Kr-Krypton.json",
+      "name": "Krypton",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": true,
+        "container_tint_rgb": [
+          210,
+          220,
+          235
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "La": {
+      "file": "La-Lanthanum.json",
+      "name": "Lanthanum",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Li": {
+      "file": "Li-Lithium.json",
+      "name": "Lithium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Lr": {
+      "file": "Lr-Lawrencium.json",
+      "name": "Lawrencium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Lu": {
+      "file": "Lu-Lutetium.json",
+      "name": "Lutetium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Lv": {
+      "file": "Lv-Livermorium.json",
+      "name": "Livermorium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Mc": {
+      "file": "Mc-Moscovium.json",
+      "name": "Moscovium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Md": {
+      "file": "Md-Mendelevium.json",
+      "name": "Mendelevium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Mg": {
+      "file": "Mg-Magnesium.json",
+      "name": "Magnesium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Mn": {
+      "file": "Mn-Manganese.json",
+      "name": "Manganese",
+      "visual": {
+        "color_rgb": [
+          190,
+          195,
+          200
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          190,
+          195,
+          200
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Mo": {
+      "file": "Mo-Molybdenum.json",
+      "name": "Molybdenum",
+      "visual": {
+        "color_rgb": [
+          130,
+          135,
+          140
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          130,
+          135,
+          140
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Mt": {
+      "file": "Mt-Meitnerium.json",
+      "name": "Meitnerium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "N": {
+      "file": "N-Nitrogen.json",
+      "name": "Nitrogen",
+      "visual": {
+        "color_rgb": [
+          220,
+          230,
+          245
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          220,
+          230,
+          245
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Na": {
+      "file": "Na-Natrium.json",
+      "name": "Sodium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Nb": {
+      "file": "Nb-Niobium.json",
+      "name": "Niobium",
+      "visual": {
+        "color_rgb": [
+          135,
+          140,
+          145
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          135,
+          140,
+          145
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Nd": {
+      "file": "Nd-Neodymium.json",
+      "name": "Neodymium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Ne": {
+      "file": "Ne-Neon.json",
+      "name": "Neon",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": true,
+        "container_tint_rgb": [
+          210,
+          220,
+          235
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Nh": {
+      "file": "Nh-Nihonium.json",
+      "name": "Nihonium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Ni": {
+      "file": "Ni-Nickel.json",
+      "name": "Nickel",
+      "visual": {
+        "color_rgb": [
+          220,
+          215,
+          200
+        ],
+        "color_power": 3.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.45,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          220,
+          215,
+          200
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "No": {
+      "file": "No-Nobelium.json",
+      "name": "Nobelium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Np": {
+      "file": "Np-Neptunium.json",
+      "name": "Neptunium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "O": {
+      "file": "O-Oxygen.json",
+      "name": "Oxygen",
+      "visual": {
+        "color_rgb": [
+          210,
+          230,
+          255
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          210,
+          230,
+          255
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Og": {
+      "file": "Og-Oganesson.json",
+      "name": "Oganesson",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Os": {
+      "file": "Os-Osmium.json",
+      "name": "Osmium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "P": {
+      "file": "P-Phosphorus.json",
+      "name": "Phosphorus",
+      "visual": {
+        "color_rgb": [
+          200,
+          180,
+          50
+        ],
+        "color_power": 4.0,
+        "darkening_power": 0.4,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          200,
+          180,
+          50
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Pa": {
+      "file": "Pa-Protactinium.json",
+      "name": "Protactinium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Pb": {
+      "file": "Pb-Plumbum.json",
+      "name": "Lead",
+      "visual": {
+        "color_rgb": [
+          165,
+          170,
+          180
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.35,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          165,
+          170,
+          180
+        ],
+        "luster_group": "dull"
+      }
+    },
+    "Pd": {
+      "file": "Pd-Palladium.json",
+      "name": "Palladium",
+      "visual": {
+        "color_rgb": [
+          220,
+          215,
+          200
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          220,
+          215,
+          200
+        ],
+        "luster_group": "mirror"
+      }
+    },
+    "Pm": {
+      "file": "Pm-Promethium.json",
+      "name": "Promethium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Po": {
+      "file": "Po-Polonium.json",
+      "name": "Polonium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "dull"
+      }
+    },
+    "Pr": {
+      "file": "Pr-Praseodymium.json",
+      "name": "Praseodymium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Pt": {
+      "file": "Pt-Platinum.json",
+      "name": "Platinum",
+      "visual": {
+        "color_rgb": [
+          220,
+          215,
+          200
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          220,
+          215,
+          200
+        ],
+        "luster_group": "mirror"
+      }
+    },
+    "Pu": {
+      "file": "Pu-Plutonium.json",
+      "name": "Plutonium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Ra": {
+      "file": "Ra-Radium.json",
+      "name": "Radium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Rb": {
+      "file": "Rb-Rubidium.json",
+      "name": "Rubidium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Re": {
+      "file": "Re-Rhenium.json",
+      "name": "Rhenium",
+      "visual": {
+        "color_rgb": [
+          120,
+          125,
+          132
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          120,
+          125,
+          132
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Rf": {
+      "file": "Rf-Rutherfordium.json",
+      "name": "Rutherfordium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Rg": {
+      "file": "Rg-Roentgenium.json",
+      "name": "Roentgenium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Rh": {
+      "file": "Rh-Rhodium.json",
+      "name": "Rhodium",
+      "visual": {
+        "color_rgb": [
+          220,
+          220,
+          225
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          220,
+          220,
+          225
+        ],
+        "luster_group": "mirror"
+      }
+    },
+    "Rn": {
+      "file": "Rn-Radon.json",
+      "name": "Radon",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": true,
+        "container_tint_rgb": [
+          210,
+          220,
+          235
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Ru": {
+      "file": "Ru-Ruthenium.json",
+      "name": "Ruthenium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "mirror"
+      }
+    },
+    "S": {
+      "file": "S-Sulfur.json",
+      "name": "Sulfur",
+      "visual": {
+        "color_rgb": [
+          200,
+          180,
+          50
+        ],
+        "color_power": 4.0,
+        "darkening_power": 0.45,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          200,
+          180,
+          50
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Sb": {
+      "file": "Sb-Stibium.json",
+      "name": "Antimony",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "dull"
+      }
+    },
+    "Sc": {
+      "file": "Sc-Scandium.json",
+      "name": "Scandium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Se": {
+      "file": "Se-Selenium.json",
+      "name": "Selenium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Sg": {
+      "file": "Sg-Seaborgium.json",
+      "name": "Seaborgium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Si": {
+      "file": "Si-Silicon.json",
+      "name": "Silicon",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Sm": {
+      "file": "Sm-Samarium.json",
+      "name": "Samarium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Sn": {
+      "file": "Sn-Stannum.json",
+      "name": "Tin",
+      "visual": {
+        "color_rgb": [
+          240,
+          245,
+          255
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          240,
+          245,
+          255
+        ],
+        "luster_group": "dull"
+      }
+    },
+    "Sr": {
+      "file": "Sr-Strontium.json",
+      "name": "Strontium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Ta": {
+      "file": "Ta-Tantalum.json",
+      "name": "Tantalum",
+      "visual": {
+        "color_rgb": [
+          130,
+          135,
+          140
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          130,
+          135,
+          140
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Tb": {
+      "file": "Tb-Terbium.json",
+      "name": "Terbium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Tc": {
+      "file": "Tc-Technetium.json",
+      "name": "Technetium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Te": {
+      "file": "Te-Tellurium.json",
+      "name": "Tellurium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Th": {
+      "file": "Th-Thorium.json",
+      "name": "Thorium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Ti": {
+      "file": "Ti-Titanium.json",
+      "name": "Titanium",
+      "visual": {
+        "color_rgb": [
+          190,
+          195,
+          200
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          190,
+          195,
+          200
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Tl": {
+      "file": "Tl-Thallium.json",
+      "name": "Thallium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Tm": {
+      "file": "Tm-Thulium.json",
+      "name": "Thulium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Ts": {
+      "file": "Ts-Tennessine.json",
+      "name": "Tennessine",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "U": {
+      "file": "U-Uranium.json",
+      "name": "Uranium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "V": {
+      "file": "V-Vanadium.json",
+      "name": "Vanadium",
+      "visual": {
+        "color_rgb": [
+          190,
+          195,
+          200
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          190,
+          195,
+          200
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "W": {
+      "file": "W-Wolframium.json",
+      "name": "Tungsten",
+      "visual": {
+        "color_rgb": [
+          130,
+          135,
+          140
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          130,
+          135,
+          140
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Xe": {
+      "file": "Xe-Xenon.json",
+      "name": "Xenon",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": true,
+        "container_tint_rgb": [
+          210,
+          220,
+          235
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Y": {
+      "file": "Y-Yttrium.json",
+      "name": "Yttrium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Yb": {
+      "file": "Yb-Ytterbium.json",
+      "name": "Ytterbium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Zn": {
+      "file": "Zn-Zinc.json",
+      "name": "Zinc",
+      "visual": {
+        "color_rgb": [
+          232,
+          238,
+          247
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          232,
+          238,
+          247
+        ],
+        "luster_group": "satin"
+      }
+    },
+    "Zr": {
+      "file": "Zr-Zirconium.json",
+      "name": "Zirconium",
+      "visual": {
+        "color_rgb": [
+          195,
+          200,
+          208
+        ],
+        "color_power": 1.0,
+        "darkening_power": 0.0,
+        "whitening_power": 0.0,
+        "roughness_bias": 0.0,
+        "is_colorless": false,
+        "container_tint_rgb": [
+          195,
+          200,
+          208
+        ],
+        "luster_group": "satin"
+      }
+    }
+  }
+}
