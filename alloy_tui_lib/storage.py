@@ -26,7 +26,7 @@ def load_case_list_items(cases_dir: Path) -> List[CaseListItem]:
             case_block = payload.get("case", {})
             summary = payload.get("summary", {})
             hv_raw = summary.get("vickers_hardness_hv")
-            corrosion_raw = summary.get("corrosion_risk_0_1")
+            corrosion_raw = summary.get("corrosion_susceptibility_0_1", summary.get("corrosion_risk_0_1"))
             brittleness_raw = summary.get("brittleness_0_1")
 
             hv = numeric(hv_raw, float("nan")) if hv_raw is not None else float("nan")
@@ -40,7 +40,7 @@ def load_case_list_items(cases_dir: Path) -> List[CaseListItem]:
                     saved_at=str(payload.get("saved_at", "")),
                     material_regime=str(summary.get("material_regime", "n/a")),
                     vickers_hardness_hv=hv if math.isfinite(hv) else None,
-                    corrosion_risk_0_1=corrosion if math.isfinite(corrosion) else None,
+                    corrosion_susceptibility_0_1=corrosion if math.isfinite(corrosion) else None,
                     brittleness_0_1=brittleness if math.isfinite(brittleness) else None,
                     load_error=None,
                 )
@@ -53,7 +53,7 @@ def load_case_list_items(cases_dir: Path) -> List[CaseListItem]:
                     saved_at="",
                     material_regime="n/a",
                     vickers_hardness_hv=None,
-                    corrosion_risk_0_1=None,
+                    corrosion_susceptibility_0_1=None,
                     brittleness_0_1=None,
                     load_error=str(exc),
                 )
@@ -87,7 +87,7 @@ def sort_case_items(items: List[CaseListItem], sort_key: str, descending: bool) 
     elif key == "regime":
         fn = lambda x: x.material_regime.lower()
     elif key == "corrosion":
-        fn = lambda x: x.corrosion_risk_0_1 if x.corrosion_risk_0_1 is not None else float("-inf")
+        fn = lambda x: x.corrosion_susceptibility_0_1 if x.corrosion_susceptibility_0_1 is not None else float("-inf")
     elif key == "brittleness":
         fn = lambda x: x.brittleness_0_1 if x.brittleness_0_1 is not None else float("-inf")
     else:
@@ -129,7 +129,7 @@ def save_case(cases_dir: Path, case: CaseConfig, report: dict) -> Path:
         suffix = datetime.now().strftime("%Y%m%d-%H%M%S")
         target = cases_dir / f"{base}-{suffix}.json"
     payload = case_to_payload(case, report=report)
-    target.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    target.write_text(json.dumps(payload, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")
     return target
 
 

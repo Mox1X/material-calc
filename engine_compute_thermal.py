@@ -2,7 +2,7 @@
 
 from typing import Any, Dict, List, Tuple
 
-from alloy_models import ElementData
+from alloy_models import ElementData, electronegativity_gap
 from config.tuning_defaults import LOW_MELT_SET
 from engine_types import ThermalComputation
 from physics_hardness import affinity_factor, is_trace_impurity
@@ -47,7 +47,7 @@ def compute_thermal(
     for sym, c in composition.items():
         if sym == base.symbol:
             continue
-        dchi_w += c * abs(base.electronegativity - db[sym].electronegativity)
+        dchi_w += c * (electronegativity_gap(base, db[sym]) or 0.0)
 
     if dchi_w < 0.2 and sub_weighted_delta < 8.0 and interstitial_c < 0.01:
         t_melt = tm_stable * (1.0 - soft_aff_strength * aff)

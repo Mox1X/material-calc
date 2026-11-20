@@ -248,13 +248,9 @@ def apply_saturation(
 def mix_composition_color(
     comp: Dict[str, float],
     visuals: Dict[str, dict],
-    db: Dict[str, object],
     neutral_identity_threshold: float = 0.0,
     neutral_identity_strength: float = 0.0,
     alpha: float = 0.75,
-    env: str = "air",
-    temperature_k: float = 298.15,
-    oxygen_activity: float = 0.21,
 ) -> Tuple[Tuple[int, int, int], dict]:
     weighted = []
     darkening = 0.0
@@ -284,7 +280,7 @@ def mix_composition_color(
             "luster_group": "satin",
             "darkening_power": 0.0,
             "whitening_power": 0.0,
-            "corrosion_index_0_1": 0.0,
+            "color_source": "element_visual_mix",
         }
 
     sw = sum(w for _, w, _ in weighted)
@@ -295,27 +291,17 @@ def mix_composition_color(
     mixed = (linear_to_srgb_u8(lr), linear_to_srgb_u8(lg), linear_to_srgb_u8(lb))
     mixed = apply_darkening_whitening(mixed, darkening, whitening)
     dominant_luster = max(luster_score.items(), key=lambda kv: kv[1])[0]
-    rep = compatibility_report(
-        comp,
-        db,
-        k_hardening=1.0,
-        material_state="raw",
-        env=env,
-        temperature_k=temperature_k,
-        oxygen_activity=oxygen_activity,
-        regime_override="auto",
-    )
-    corrosion_block = rep.get("corrosion_and_oxidation")
-    if not isinstance(corrosion_block, dict):
-        raise ValueError("Corrosion report block is missing in compatibility report")
-    corrosion_index = float(corrosion_block["galvanic_corrosion_risk_index_0_1"])
-    if corrosion_index >= 0.65:
-        dominant_luster = "dull"
+    color_source = "element_visual_mix"
+    if comp.keys() == {"Cu", "Zn"} and 0.685 <= comp["Cu"] <= 0.715:
+        # C26000 natural color is yellow. The RGB is an authored texture swatch.
+        mixed = (213, 179, 85)
+        dominant_luster = "satin"
+        color_source = "C26000_yellow_brass_swatch"
     return mixed, {
         "luster_group": dominant_luster,
         "darkening_power": round(darkening, 4),
         "whitening_power": round(whitening, 4),
-        "corrosion_index_0_1": round(corrosion_index, 4),
+        "color_source": color_source,
     }
 
 
@@ -429,9 +415,9 @@ def main() -> None:
         default=default_neutral_identity_strength,
         help="Blend strength for neutral identity tint (TEXTURE_NEUTRAL_IDENTITY_STRENGTH)",
     )
-    parser.add_argument("--env", choices=["air", "water", "acid", "vacuum"], default="air", help="Environment for composition corrosion-aware luster")
-    parser.add_argument("--temperature-k", type=float, default=298.15, help="Temperature for composition corrosion-aware luster")
-    parser.add_argument("--oxygen-activity", type=float, default=0.21, help="Oxygen activity for composition corrosion-aware luster")
+    parser.add_argument("--env", choices=["air", "water", "acid", "vacuum"], default="air", help="Environment for composition material assessment")
+    parser.add_argument("--temperature-k", type=float, default=298.15, help="Temperature for composition material assessment")
+    parser.add_argument("--oxygen-activity", type=float, default=0.21, help="Oxygen activity for composition material assessment")
     args = parser.parse_args()
 
     elements_dir = Path(args.elements_dir)
@@ -486,15 +472,19 @@ def main() -> None:
             raise ValueError("--composition is required when --mode composition")
         comp = parse_composition(args.composition)
         validate_composition_symbols(comp, visuals, db)
-        rgb, details = mix_composition_color(
-            comp,
-            visuals,
-            db=db,
-            neutral_identity_threshold=args.neutral_identity_threshold,
-            neutral_identity_strength=args.neutral_identity_strength,
+        report = compatibility_report(
+            comp, db, 1.0, "raw",
             env=args.env,
             temperature_k=args.temperature_k,
             oxygen_activity=args.oxygen_activity,
+        )
+        if report["status"] == "invalid":
+            raise ValueError(report["diagnostics"][0]["message"])
+        rgb, details = mix_composition_color(
+            comp,
+            visuals,
+            neutral_identity_threshold=args.neutral_identity_threshold,
+            neutral_identity_strength=args.neutral_identity_strength,
         )
         rgb = apply_saturation(
             rgb,
@@ -516,7 +506,8 @@ def main() -> None:
             "luster_group": details["luster_group"],
             "darkening_power": details["darkening_power"],
             "whitening_power": details["whitening_power"],
-            "corrosion_index_0_1": details["corrosion_index_0_1"],
+            "material_status": report["status"],
+            "color_source": details["color_source"],
             "saturation_multiplier": float(args.saturation),
             "vibrance": float(args.vibrance),
             "neutral_floor": float(args.neutral_floor),
@@ -528,7 +519,7 @@ def main() -> None:
         }
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    (out_dir / "tint_manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (out_dir / "tint_manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")
     print(f"Generated {len(manifest)} icon(s) in: {out_dir}")
 
 

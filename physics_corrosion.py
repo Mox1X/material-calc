@@ -47,7 +47,7 @@ def corrosion_risk_score(
 
     symbols = list(composition.keys())
     if symbols:
-        noble_like = all((db[s].electronegativity >= 1.9) or (db[s].standard_potential_v >= 0.3) for s in symbols)
+        noble_like = all((db[s].electronegativity is not None and db[s].electronegativity >= 1.9) or (db[s].standard_potential_v >= 0.3) for s in symbols)
         if noble_like:
             score *= CORROSION_PARAMS["noble_like_multiplier"]
 

@@ -2,7 +2,7 @@
 
 from typing import Dict, List, Tuple
 
-from alloy_models import ElementData
+from alloy_models import ElementData, electronegativity_gap
 from engine_types import CorrosionComputation
 from physics_carbides import CarbideProfile
 from physics_corrosion import corrosion_risk_score, oxide_protection_indicator
@@ -25,7 +25,7 @@ def compute_corrosion(
     temperature_k: float,
     oxygen_activity: float,
 ) -> CorrosionComputation:
-    noble_like_alloy = all((db[s].electronegativity >= 1.9) or (db[s].standard_potential_v >= 0.3) for s in composition)
+    noble_like_alloy = all((db[s].electronegativity is not None and db[s].electronegativity >= 1.9) or (db[s].standard_potential_v >= 0.3) for s in composition)
 
     dchi_w = 0.0
     brittle_phase_risk = 0.0
@@ -34,7 +34,7 @@ def compute_corrosion(
         if sym == base.symbol:
             continue
         el = db[sym]
-        dchi = abs(base.electronegativity - db[sym].electronegativity)
+        dchi = (electronegativity_gap(base, db[sym]) or 0.0)
         dchi_w += c * dchi
         if dchi > 0.4 and not noble_like_alloy:
             brittle_phase_risk += c

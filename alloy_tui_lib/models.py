@@ -10,6 +10,7 @@ from typing import Any, Dict
 
 from alloy_validation import normalize_composition
 from composition import parse_composition
+from report_types import estimate_value
 
 from .common import clamp01, numeric
 
@@ -24,6 +25,7 @@ class CaseConfig:
     oxygen_activity: float
     regime_override: str
     k_hardening: float
+    material_profile: str | None = None
 
 
 @dataclass
@@ -33,7 +35,7 @@ class CaseListItem:
     saved_at: str
     material_regime: str
     vickers_hardness_hv: float | None
-    corrosion_risk_0_1: float | None
+    corrosion_susceptibility_0_1: float | None
     brittleness_0_1: float | None
     load_error: str | None
 
@@ -64,14 +66,16 @@ def case_to_payload(case: CaseConfig, report: Dict[str, Any] | None = None) -> D
             "oxygen_activity": case.oxygen_activity,
             "regime_override": case.regime_override,
             "k_hardening": case.k_hardening,
+            "material_profile": case.material_profile,
         },
     }
     if isinstance(report, dict):
+        classification = report["classification"]
         payload["summary"] = {
-            "material_regime": report.get("model_context", {}).get("material_regime"),
-            "vickers_hardness_hv": report.get("predicted_properties", {}).get("vickers_hardness_hv"),
-            "corrosion_risk_0_1": report.get("corrosion_and_oxidation", {}).get("galvanic_corrosion_risk_index_0_1"),
-            "brittleness_0_1": report.get("hume_rothery", {}).get("brittleness_index_0_1"),
+            "material_regime": classification["regime"] or classification["kind"],
+            "vickers_hardness_hv": estimate_value(report, "vickers_hardness_hv"),
+            "corrosion_susceptibility_0_1": estimate_value(report, "corrosion_susceptibility_index_0_1"),
+            "brittleness_0_1": report.get("model_details", {}).get("hume_rothery", {}).get("brittleness_index_0_1"),
         }
     return payload
 
@@ -99,6 +103,7 @@ def payload_to_case(payload: Dict[str, Any]) -> CaseConfig:
         oxygen_activity=clamp01(numeric(case.get("oxygen_activity", 0.21), 0.21)),
         regime_override=str(case.get("regime_override", "auto")),
         k_hardening=numeric(case.get("k_hardening", 1.0), 1.0),
+        material_profile=case.get("material_profile"),
     )
 
 

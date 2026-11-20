@@ -6,10 +6,10 @@ from alloy_models import ElementData
 from engine_types import CorrosionComputation, HardnessComputation
 from physics_carbides import CarbideProfile
 from physics_phase_regime import CastIronGraphiteEffect, TiAlIntermetallicEffect
-from report_types import CompatibilityReport
+from report_types import EmpiricalReport
 
 
-def build_report(
+def build_empirical_report(
     composition: Dict[str, float],
     base: ElementData,
     base_symbol: str,
@@ -27,7 +27,7 @@ def build_report(
     oxygen_activity: float,
     feasibility: float,
     input_validity_warnings: List[str],
-) -> CompatibilityReport:
+) -> EmpiricalReport:
     return {
         "base_element": {"symbol": base.symbol, "name": base.name, "fraction": round(composition[base_symbol], 6)},
         "composition_normalized": {k: round(v, 6) for k, v in composition.items()},
@@ -85,7 +85,7 @@ def build_report(
         "phase_estimate": {k: round(v, 4) for k, v in corrosion.phase_fractions.items()},
         "corrosion_and_oxidation": {
             "electrode_potential_spread_v": round(corrosion.ep_spread, 4),
-            "galvanic_corrosion_risk_index_0_1": round(corrosion.corrosion_score, 4),
+            "corrosion_susceptibility_index_0_1": round(corrosion.corrosion_score, 4),
             "halogen_pitting_risk_0_1": round(corrosion.halogen_pitting_risk, 4),
             "passivation_multiplier": round(corrosion.passivation_multiplier, 4),
             "ti_passivation_multiplier": round(corrosion.ti_passivation_multiplier, 4),

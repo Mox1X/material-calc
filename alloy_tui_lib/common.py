@@ -153,7 +153,8 @@ def fmt_delta(delta: float | None, higher_is_risk: bool = False, precision: int 
 
 
 def summary_value(report: Dict[str, Any], block: str, field: str) -> float | None:
-    node = report.get(block, {})
+    details = report.get("model_details", {})
+    node = details if block == "model_context" else details.get(block, {})
     if not isinstance(node, dict):
         return None
     raw = node.get(field)

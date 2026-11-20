@@ -11,6 +11,7 @@ from alloy_engine import compatibility_report
 from alloy_models import load_elements
 from alloy_tuning import load_tuning_file
 from alloy_validation import find_duplicate_symbols
+from material_report import diagnose, make_report
 from composition import parse_composition
 
 
@@ -22,8 +23,9 @@ def fraction_0_1(value: str) -> float:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description='Alloy compatibility constructor')
-    parser.add_argument('--composition', required=True, help='Example: Fe:0.7,Cr:0.2,C:0.1')
+    parser = argparse.ArgumentParser(description='Alloy compatibility constructor', exit_on_error=False)
+    parser.add_argument('--composition', help='Example: Fe:0.7,Cr:0.2,C:0.1')
+    parser.add_argument('--material-profile', help='Select a nominal reference profile by ID')
     parser.add_argument(
         '--k-hardening',
         type=float,
@@ -92,9 +94,8 @@ def run_cli(args: argparse.Namespace) -> Dict[str, Any]:
     if oxygen_activity is None:
         oxygen_activity = 0.0 if args.env == 'vacuum' else 0.21
 
-    duplicates = find_duplicate_symbols(args.composition)
-
-    composition = parse_composition(args.composition)
+    duplicates = find_duplicate_symbols(args.composition or '')
+    composition = parse_composition(args.composition) if args.composition is not None else None
     db = load_elements(Path(args.elements_dir)) if args.elements_dir else load_elements()
     tuning = load_tuning_file(Path(args.tuning_file)) if args.tuning_file else None
     k_used = args.k_hardening
@@ -104,6 +105,7 @@ def run_cli(args: argparse.Namespace) -> Dict[str, Any]:
         if not args.calibration_file:
             raise ValueError('--fit-k-hardening requires --calibration-file')
         cases = load_calibration_cases(Path(args.calibration_file))
+        skipped_cases: list[int] = []
         k_used, fit_error = fit_k_hardening(
             db,
             cases,
@@ -112,9 +114,11 @@ def run_cli(args: argparse.Namespace) -> Dict[str, Any]:
             temperature_k=args.temperature_k,
             oxygen_activity=oxygen_activity,
             tuning=tuning,
+            skipped_cases=skipped_cases,
         )
         calibration_meta = {
             'cases': len(cases),
+            'cases_without_hv_estimate': skipped_cases,
             'fitted_k_hardening': round(k_used, 4),
             'fit_mse': round(fit_error, 8),
         }
@@ -129,22 +133,12 @@ def run_cli(args: argparse.Namespace) -> Dict[str, Any]:
         oxygen_activity=oxygen_activity,
         regime_override=args.regime,
         tuning=tuning,
+        material_profile=args.material_profile,
     )
-    input_validity = result.get('input_validity')
-    if not isinstance(input_validity, dict):
-        input_validity = {}
-        result['input_validity'] = input_validity
-    warnings = input_validity.get('warnings')
-    if not isinstance(warnings, list):
-        warnings = []
-        input_validity['warnings'] = warnings
     if duplicates:
-        warnings.append(
-            'Duplicate symbols detected in input composition and were summed before normalization: '
-            + ', '.join(duplicates)
-        )
+        diagnose(result, 'duplicate_symbols', 'Repeated element fractions were added before normalization: ' + ', '.join(duplicates))
     if args.env == 'vacuum' and args.oxygen_activity is None:
-        warnings.append('Vacuum mode auto-set oxygen_activity to 0.0 (override with --oxygen-activity if needed).')
+        diagnose(result, 'vacuum_default', 'Vacuum mode sets oxygen activity to 0.0 by default.')
     if calibration_meta:
         result['calibration'] = calibration_meta
 
@@ -153,15 +147,17 @@ def run_cli(args: argparse.Namespace) -> Dict[str, Any]:
 
 def main(argv: List[str] | None = None) -> None:
     parser = build_parser()
-    args = parser.parse_args(argv)
-    result = run_cli(args)
+    pretty = False
     try:
-        if args.pretty:
-            print(json.dumps(result, indent=2, ensure_ascii=False, allow_nan=False))
-        else:
-            print(json.dumps(result, ensure_ascii=False, allow_nan=False))
-    except ValueError as exc:
-        raise ValueError("Result contains non-finite numeric values and cannot be serialized as strict JSON") from exc
+        args = parser.parse_args(argv)
+        pretty = args.pretty
+        result = run_cli(args)
+    except (argparse.ArgumentError, ValueError, OSError) as error:
+        result = make_report()
+        diagnose(result, "invalid_input", str(error))
+    print(json.dumps(result, indent=2 if pretty else None, ensure_ascii=False, allow_nan=False))
+    if result["status"] == "invalid":
+        raise SystemExit(2)
 
 
 if __name__ == '__main__':

@@ -14,6 +14,7 @@ from typing import Dict, Iterable, List, Tuple
 from alloy_engine import compatibility_report
 from alloy_models import load_elements
 from composition import parse_composition
+from report_types import estimate_value
 
 
 ALL_ALLOY_MARKS: List[str] = [
@@ -215,18 +216,22 @@ class BatchRow:
     source_composition_wt_json: str
     composition_normalized_json: str
     base_element_symbol: str
-    material_regime: str
-    vickers_hardness_hv: float
-    estimated_melting_point_k: float
-    density_kg_m3: float
-    neutron_cross_section_barn: float
-    brittleness_index_0_1: float
-    corrosion_risk_index_0_1: float
-    confidence_index_0_1: float
-    solid_phase_feasibility_0_1: float
-    castability_index_0_1: float
-    carbide_index: float
-    carbide_bonus_hv: float
+    material_regime: str | None
+    schema_version: int
+    status: str
+    vickers_hardness_hv: float | None
+    melting_point_k: float | None
+    solidus_k: float | None
+    liquidus_k: float | None
+    density_kg_m3: float | None
+    neutron_cross_section_barn: float | None
+    brittleness_index_0_1: float | None
+    corrosion_susceptibility_index_0_1: float | None
+    confidence_index_0_1: float | None
+    solid_phase_feasibility_0_1: float | None
+    castability_index_0_1: float | None
+    carbide_index: float | None
+    carbide_bonus_hv: float | None
     warnings_json: str
     full_report_json: str
     created_at_utc: str
@@ -312,18 +317,22 @@ def init_db(conn: sqlite3.Connection) -> None:
             source_composition_wt_json TEXT NOT NULL,
             composition_normalized_json TEXT NOT NULL,
             base_element_symbol TEXT NOT NULL,
-            material_regime TEXT NOT NULL,
-            vickers_hardness_hv REAL NOT NULL,
-            estimated_melting_point_k REAL NOT NULL,
-            density_kg_m3 REAL NOT NULL,
-            neutron_cross_section_barn REAL NOT NULL,
-            brittleness_index_0_1 REAL NOT NULL,
-            corrosion_risk_index_0_1 REAL NOT NULL,
-            confidence_index_0_1 REAL NOT NULL,
-            solid_phase_feasibility_0_1 REAL NOT NULL,
-            castability_index_0_1 REAL NOT NULL,
-            carbide_index REAL NOT NULL,
-            carbide_bonus_hv REAL NOT NULL,
+            material_regime TEXT,
+            schema_version INTEGER NOT NULL,
+            status TEXT NOT NULL,
+            vickers_hardness_hv REAL,
+            melting_point_k REAL,
+            solidus_k REAL,
+            liquidus_k REAL,
+            density_kg_m3 REAL,
+            neutron_cross_section_barn REAL,
+            brittleness_index_0_1 REAL,
+            corrosion_susceptibility_index_0_1 REAL,
+            confidence_index_0_1 REAL,
+            solid_phase_feasibility_0_1 REAL,
+            castability_index_0_1 REAL,
+            carbide_index REAL,
+            carbide_bonus_hv REAL,
             warnings_json TEXT NOT NULL,
             full_report_json TEXT NOT NULL,
             created_at_utc TEXT NOT NULL
@@ -345,7 +354,7 @@ def init_db(conn: sqlite3.Connection) -> None:
 
 
 def serialize(obj: object) -> str:
-    return json.dumps(obj, ensure_ascii=False, separators=(",", ":"))
+    return json.dumps(obj, ensure_ascii=False, separators=(",", ":"), allow_nan=False)
 
 
 def calculate_rows(
@@ -377,34 +386,34 @@ def calculate_rows(
                 oxygen_activity=oxygen_activity,
                 regime_override=regime,
             )
+            if report["status"] == "invalid":
+                raise ValueError(report["diagnostics"][0]["message"])
+            details = report.get("model_details", {})
+            hardness_model = details.get("hardness_model", {})
             rows.append(
                 BatchRow(
                     input_order=idx,
                     alloy_mark=mark,
                     source_composition_wt_json=serialize(wt_comp),
-                    composition_normalized_json=serialize(report.get("composition_normalized", {})),
-                    base_element_symbol=str(report.get("base_element", {}).get("symbol", "")),
-                    material_regime=str(report.get("model_context", {}).get("material_regime", "")),
-                    vickers_hardness_hv=float(report.get("predicted_properties", {}).get("vickers_hardness_hv", 0.0)),
-                    estimated_melting_point_k=float(
-                        report.get("predicted_properties", {}).get("estimated_melting_point_k", 0.0)
-                    ),
-                    density_kg_m3=float(report.get("predicted_properties", {}).get("density_kg_m3", 0.0)),
-                    neutron_cross_section_barn=float(
-                        report.get("predicted_properties", {}).get("neutron_cross_section_barn", 0.0)
-                    ),
-                    brittleness_index_0_1=float(report.get("hume_rothery", {}).get("brittleness_index_0_1", 0.0)),
-                    corrosion_risk_index_0_1=float(
-                        report.get("corrosion_and_oxidation", {}).get("galvanic_corrosion_risk_index_0_1", 0.0)
-                    ),
-                    confidence_index_0_1=float(report.get("model_context", {}).get("confidence_index_0_1", 0.0)),
-                    solid_phase_feasibility_0_1=float(
-                        report.get("model_context", {}).get("solid_phase_feasibility_0_1", 0.0)
-                    ),
-                    castability_index_0_1=float(report.get("predicted_properties", {}).get("castability_index_0_1", 0.0)),
-                    carbide_index=float(report.get("predicted_properties", {}).get("carbide_index", 0.0)),
-                    carbide_bonus_hv=float(report.get("predicted_properties", {}).get("carbide_bonus_hv", 0.0)),
-                    warnings_json=serialize(report.get("input_validity", {}).get("warnings", [])),
+                    composition_normalized_json=serialize(report["composition_normalized"]),
+                    base_element_symbol=max(sorted(composition), key=composition.get),
+                    material_regime=report["classification"]["regime"],
+                    schema_version=report["schema_version"],
+                    status=report["status"],
+                    vickers_hardness_hv=estimate_value(report, "vickers_hardness_hv"),
+                    melting_point_k=estimate_value(report, "melting_point_k"),
+                    solidus_k=estimate_value(report, "solidus_k"),
+                    liquidus_k=estimate_value(report, "liquidus_k"),
+                    density_kg_m3=estimate_value(report, "density_kg_m3"),
+                    neutron_cross_section_barn=estimate_value(report, "neutron_cross_section_barn"),
+                    brittleness_index_0_1=details.get("hume_rothery", {}).get("brittleness_index_0_1"),
+                    corrosion_susceptibility_index_0_1=estimate_value(report, "corrosion_susceptibility_index_0_1"),
+                    confidence_index_0_1=details.get("confidence_index_0_1"),
+                    solid_phase_feasibility_0_1=report["feasibility"]["solid_phase_index"],
+                    castability_index_0_1=hardness_model.get("castability_index_0_1"),
+                    carbide_index=hardness_model.get("carbide_index"),
+                    carbide_bonus_hv=hardness_model.get("carbide_bonus_hv"),
+                    warnings_json=serialize(report["diagnostics"]),
                     full_report_json=serialize(report),
                     created_at_utc=created_at,
                 )
@@ -425,12 +434,16 @@ def write_rows(conn: sqlite3.Connection, rows: List[BatchRow], failures: List[Tu
             composition_normalized_json,
             base_element_symbol,
             material_regime,
+            schema_version,
+            status,
             vickers_hardness_hv,
-            estimated_melting_point_k,
+            melting_point_k,
+            solidus_k,
+            liquidus_k,
             density_kg_m3,
             neutron_cross_section_barn,
             brittleness_index_0_1,
-            corrosion_risk_index_0_1,
+            corrosion_susceptibility_index_0_1,
             confidence_index_0_1,
             solid_phase_feasibility_0_1,
             castability_index_0_1,
@@ -439,7 +452,7 @@ def write_rows(conn: sqlite3.Connection, rows: List[BatchRow], failures: List[Tu
             warnings_json,
             full_report_json,
             created_at_utc
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         [
             (
@@ -449,12 +462,16 @@ def write_rows(conn: sqlite3.Connection, rows: List[BatchRow], failures: List[Tu
                 row.composition_normalized_json,
                 row.base_element_symbol,
                 row.material_regime,
+                row.schema_version,
+                row.status,
                 row.vickers_hardness_hv,
-                row.estimated_melting_point_k,
+                row.melting_point_k,
+                row.solidus_k,
+                row.liquidus_k,
                 row.density_kg_m3,
                 row.neutron_cross_section_barn,
                 row.brittleness_index_0_1,
-                row.corrosion_risk_index_0_1,
+                row.corrosion_susceptibility_index_0_1,
                 row.confidence_index_0_1,
                 row.solid_phase_feasibility_0_1,
                 row.castability_index_0_1,
@@ -478,7 +495,6 @@ def write_rows(conn: sqlite3.Connection, rows: List[BatchRow], failures: List[Tu
         """,
         failures,
     )
-    conn.commit()
 
 
 def build_arg_parser() -> argparse.ArgumentParser:
@@ -518,6 +534,7 @@ def main() -> None:
     db_path = Path(args.db)
     db_path.parent.mkdir(parents=True, exist_ok=True)
     with sqlite3.connect(db_path) as conn:
+        conn.execute("BEGIN IMMEDIATE")
         init_db(conn)
         write_rows(conn, rows, failures)
 

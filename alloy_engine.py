@@ -1,22 +1,21 @@
 ﻿#!/usr/bin/env python3
 
+import math
 from typing import Any, Dict, List
 
 from alloy_models import ElementData
 from alloy_tuning import resolve_tuning
-from alloy_validation import ensure_known_symbols, validate_composition_values, validate_runtime_context
-from engine_build_report import build_report
+from alloy_validation import ensure_known_symbols, normalize_composition, validate_runtime_context
+from config.tuning_defaults import HALOGEN_SYMBOLS, NOBLE_GASES
+from engine_build_report import build_empirical_report
 from engine_compute_corrosion import compute_corrosion
 from engine_compute_hardness import compute_hardness
 from engine_compute_thermal import compute_thermal
 from physics_carbides import CarbideProfile, carbide_profile
 from physics_phase_regime import CastIronGraphiteEffect, cast_iron_graphite_effect, detect_material_regime, ti_al_intermetallic_effect
 from report_types import CompatibilityReport
-
-
-def _validate_composition_symbols(composition: Dict[str, float], db: Dict[str, ElementData]) -> None:
-    validate_composition_values(composition)
-    ensure_known_symbols(composition, db)
+from material_reference import composition_matches, profile_composition, reference_candidates
+from material_report import add_empirical_properties, blend_report, diagnose, make_report, phase_report
 
 
 def _resolve_regime_context(
@@ -68,11 +67,11 @@ def _resolve_regime_context(
             'castability_bonus': 0.0,
         }
 
-    return material_regime, carbides_local, cast_iron_fx, ti_al_fx, regime_validity_warnings
+    return auto_regime, material_regime, carbides_local, cast_iron_fx, ti_al_fx, regime_validity_warnings
 
 
 def compatibility_report(
-    composition: Dict[str, float],
+    composition: Dict[str, float] | None,
     db: Dict[str, ElementData],
     k_hardening: float,
     material_state: str,
@@ -81,20 +80,84 @@ def compatibility_report(
     oxygen_activity: float = 0.21,
     regime_override: str = 'auto',
     tuning: Dict[str, Any] | None = None,
+    *,
+    material_profile: str | None = None,
 ) -> CompatibilityReport:
-    temperature_k, oxygen_activity = validate_runtime_context(
-        material_state=material_state,
-        env=env,
-        regime_override=regime_override,
-        temperature_k=temperature_k,
-        oxygen_activity=oxygen_activity,
-    )
-    _validate_composition_symbols(composition, db)
+    report = make_report()
+    try:
+        temperature_k, oxygen_activity = validate_runtime_context(
+            material_state=material_state,
+            env=env,
+            regime_override=regime_override,
+            temperature_k=temperature_k,
+            oxygen_activity=oxygen_activity,
+        )
+        if not math.isfinite(k_hardening) or k_hardening <= 0:
+            raise ValueError("k_hardening must be finite and greater than zero")
+        report["conditions"] = {
+            "material_state": material_state,
+            "environment": env,
+            "temperature_k": temperature_k,
+            "oxygen_activity": oxygen_activity,
+        }
+        if composition is not None:
+            composition = normalize_composition(composition)
+            report["composition_normalized"] = composition
+            ensure_known_symbols(composition, db)
+        if material_profile:
+            nominal = profile_composition(material_profile, db)
+            if composition is not None and not composition_matches(composition, nominal):
+                raise ValueError(f"Composition does not match material profile '{material_profile}'")
+            if composition is None:
+                composition = nominal
+                report["composition_normalized"] = composition
+        if composition is None:
+            raise ValueError("Specify a composition or a material profile")
+    except (TypeError, ValueError, OverflowError) as error:
+        diagnose(report, "invalid_input", str(error))
+        return report
 
-    base_symbol = max(composition.items(), key=lambda kv: kv[1])[0]
+    if material_profile:
+        blend_report(report, material_profile)
+        return report
+
+    phases, profiles = reference_candidates(composition, db)
+    report["classification"]["candidates"] = phases + profiles
+    if len(phases) == 1 and not profiles:
+        phase_report(report, phases[0])
+        return report
+
+    volatile_unbound = sum(composition.get(symbol, 0.0) for symbol in (*NOBLE_GASES, *HALOGEN_SYMBOLS))
+    if volatile_unbound >= 0.02:
+        report["classification"].update(kind="mixture", basis="elemental_composition")
+        report["status"] = "unsupported"
+        report["feasibility"]["status"] = "outside_model_domain"
+        diagnose(report, "unresolved_gases_or_halogens", "At least 2 wt% is noble gas or halogen without an identified bound phase; outside the alloy model domain.")
+        return report
+
+    if profiles or len(phases) > 1 or sum(composition.get(symbol, 0) for symbol in ("O", "N")) >= 0.02:
+        report["classification"].update(kind="compound_or_mixture", family="ceramic", basis="composition_candidates")
+        report["status"] = "partial"
+        diagnose(report, "phase_assembly_required", "The elemental composition may describe a compound or a phase mixture; select a matching profile or specify the phases.")
+        diagnose(report, "properties_unavailable", "Thermal, density, hardness and corrosion estimates need the material's phases.")
+        return report
+
+    base_symbol = max(sorted(composition), key=composition.get)
     base = db[base_symbol]
+    if base_symbol in {"B", "C", "N", "O", "P", "S", "Se"}:
+        report["classification"].update(kind="element" if len(composition) == 1 else "mixture", basis="elemental_composition")
+        report["status"] = "unsupported"
+        report["feasibility"]["status"] = "outside_model_domain"
+        diagnose(report, "nonmetallic_material_unresolved", "No reference phase or applicable metallic model for this composition.")
+        return report
 
-    material_regime, carbides_local, cast_iron_fx, ti_al_fx, regime_validity_warnings = _resolve_regime_context(
+    report["classification"].update(kind="element" if len(composition) == 1 else "alloy", basis="empirical_classification")
+    missing_electronegativity = any(db[symbol].electronegativity is None for symbol in composition)
+    if missing_electronegativity:
+        diagnose(report, "electronegativity_missing", "Unknown electronegativity was omitted from the chemical differences.")
+    diagnose(report, "galvanic_context_required", "Galvanic corrosion requires the contacting material, electrolyte and contact conditions.")
+
+    auto_regime, material_regime, carbides_local, cast_iron_fx, ti_al_fx, regime_validity_warnings = _resolve_regime_context(
         composition,
         base_symbol,
         regime_override,
@@ -163,7 +226,7 @@ def compatibility_report(
         )
     input_validity_warnings.extend(regime_validity_warnings)
 
-    return build_report(
+    empirical = build_empirical_report(
         composition=composition,
         base=base,
         base_symbol=base_symbol,
@@ -182,3 +245,10 @@ def compatibility_report(
         feasibility=feasibility,
         input_validity_warnings=input_validity_warnings,
     )
+    add_empirical_properties(report, empirical, material_state, auto_regime)
+    if missing_electronegativity:
+        report["status"] = "partial"
+        report["model_details"]["hume_rothery"]["electronegativity_weighted_delta"] = None
+    for warning in input_validity_warnings:
+        diagnose(report, "model_warning", warning)
+    return report

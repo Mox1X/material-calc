@@ -60,11 +60,14 @@ def main(argv: List[str] | None = None) -> None:
                 report = recalc_report(case, db)
                 last_error = None
             elif raw == "edit-comp":
-                case.composition = edit_composition_interactive(case.composition, db)
+                composition = edit_composition_interactive(case.composition, db)
+                if composition != case.composition:
+                    case.composition = composition
+                    case.material_profile = None
                 report = recalc_report(case, db)
                 last_error = None
             elif raw == "edit-params":
-                case = edit_params_interactive(case)
+                case = edit_params_interactive(case, db)
                 report = recalc_report(case, db)
                 last_error = None
             elif raw == "save":

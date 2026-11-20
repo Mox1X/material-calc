@@ -3,7 +3,7 @@
 import math
 from typing import Dict, List, Tuple
 
-from alloy_models import ElementData
+from alloy_models import ElementData, electronegativity_gap
 from config.tuning_defaults import (
     AFFINITY_PARAMS,
     AL_PRECIPITATION_PARAMS,
@@ -237,7 +237,7 @@ def affinity_factor(
     for sym, c in composition.items():
         if sym == base.symbol:
             continue
-        dchi = abs(base.electronegativity - db[sym].electronegativity)
+        dchi = (electronegativity_gap(base, db[sym]) or 0.0)
         if is_trace_impurity(sym, c):
             dchi *= AFFINITY_PARAMS["trace_multiplier"]
         chi_acc += c * min(dchi / 2.0, 1.0)
@@ -253,7 +253,7 @@ def affinity_factor(
 
     aff = min(AFFINITY_PARAMS["aff_cap"], AFFINITY_PARAMS["chi_weight"] * chi_acc + AFFINITY_PARAMS["size_weight"] * size_acc)
     symbols = list(composition.keys())
-    noble_like = all((db[s].electronegativity >= 1.9) or (db[s].standard_potential_v >= 0.3) for s in symbols)
+    noble_like = all((db[s].electronegativity is not None and db[s].electronegativity >= 1.9) or (db[s].standard_potential_v >= 0.3) for s in symbols)
     if noble_like:
         aff *= AFFINITY_PARAMS["noble_like_multiplier"]
     return aff

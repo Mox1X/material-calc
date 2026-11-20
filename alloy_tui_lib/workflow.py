@@ -10,6 +10,8 @@ from alloy_engine import compatibility_report
 from alloy_models import ElementData
 from alloy_validation import ensure_known_symbols, normalize_composition
 from composition import parse_composition
+from material_reference import MATERIAL_PROFILES, profile_composition
+from report_types import estimate_value
 
 from .common import (
     Ansi,
@@ -24,7 +26,6 @@ from .common import (
     format_percent,
     numeric,
     progress_bar,
-    risk_color,
     signed_bar,
     summary_value,
     warning_color,
@@ -39,31 +40,32 @@ def render_dashboard(case: CaseConfig, report: Dict[str, Any], case_files: List[
     print(f"Case: {colorize(case.name, Ansi.CYAN)}    Saved cases: {len(case_files)}")
     print("-" * 88)
 
-    prop = report.get("predicted_properties", {})
-    hume = report.get("hume_rothery", {})
-    ctx = report.get("model_context", {})
-    corr = report.get("corrosion_and_oxidation", {})
-    phase = report.get("phase_estimate", {})
-
-    hv = numeric(prop.get("vickers_hardness_hv"), 0.0)
-    t_melt = numeric(prop.get("estimated_melting_point_k"), 0.0)
-    brittleness = numeric(hume.get("brittleness_index_0_1"), 0.0)
-    corrosion_risk = numeric(corr.get("galvanic_corrosion_risk_index_0_1"), 0.0)
-    confidence = numeric(ctx.get("confidence_index_0_1"), 0.0)
-    regime = str(ctx.get("material_regime", "unknown"))
+    details = report.get("model_details", {})
+    phase = details.get("phase_estimate", {})
+    classification = report["classification"]
+    material = classification["profile"] or classification["formula"] or classification["regime"] or classification["kind"]
+    hardness = report["properties"]["vickers_hardness_hv"]
+    hv = estimate_value(report, "vickers_hardness_hv")
+    if hardness is not None and hardness["range"] is not None:
+        hardness_text = "–".join(fmt_float(limit, 0) for limit in hardness["range"])
+    else:
+        hardness_text = fmt_float(hv, 2)
 
     key_rows = [
-        ["Regime", regime, "Hardness (HV)", f"{hv:,.2f}"],
-        ["Melt Temp (K)", f"{t_melt:,.2f}", "Confidence", f"{confidence:.3f}"],
-        [
-            "Corrosion Risk",
-            colorize(f"{corrosion_risk:.3f}", risk_color(corrosion_risk)),
-            "Brittleness",
-            colorize(f"{brittleness:.3f}", risk_color(brittleness)),
-        ],
+        ["Material", material, "Status", report["status"]],
+        ["Hardness (HV)", hardness_text, "Profile", case.material_profile or "n/a"],
+        ["Corrosion susceptibility", fmt_float(estimate_value(report, "corrosion_susceptibility_index_0_1")), "Confidence", fmt_float(details.get("confidence_index_0_1"))],
+        ["Melting point (K)", fmt_float(estimate_value(report, "melting_point_k"), 0), "Density (kg/m³)", fmt_float(estimate_value(report, "density_kg_m3"), 0)],
+        ["Solidus (K)", fmt_float(estimate_value(report, "solidus_k"), 0), "Liquidus (K)", fmt_float(estimate_value(report, "liquidus_k"), 0)],
     ]
+    for code, label in (("decomposition_k", "Decomposition (K)"), ("decomposition_or_sublimation_k", "Decomposition or sublimation (K)")):
+        value = estimate_value(report, code)
+        if value is not None:
+            key_rows.append([label, fmt_float(value, 0), "", ""])
     print(bold("Key Metrics"))
     print(format_compact_table(key_rows))
+    if classification["candidates"]:
+        print("Candidates: " + ", ".join(classification["candidates"]))
 
     print()
     print(bold("Composition (Elements)"))
@@ -73,41 +75,21 @@ def render_dashboard(case: CaseConfig, report: Dict[str, Any], case_files: List[
     print(format_compact_table(comp_rows))
 
     print()
-    print(bold("Phase Fractions"))
-    phase_rows: List[List[str]] = [["Phase", "Fraction", "Bar"]]
-    for key, value in sorted(phase.items()):
-        frac = numeric(value, 0.0)
-        phase_name = key.replace("_fraction", "").replace("_", " ")
-        phase_rows.append([phase_name, format_percent(frac), progress_bar(frac)])
-    print(format_compact_table(phase_rows))
+    if phase:
+        print(bold("Estimated Phase Fractions"))
+        phase_rows: List[List[str]] = [["Phase", "Fraction", "Bar"]]
+        for key, frac in sorted(phase.items()):
+            phase_name = key.replace("_fraction", "").replace("_", " ")
+            fraction_text = "n/a" if frac is None else format_percent(frac)
+            fraction_bar = "" if frac is None else progress_bar(frac)
+            phase_rows.append([phase_name, fraction_text, fraction_bar])
+        print(format_compact_table(phase_rows))
 
     print()
-    print(bold("Secondary Properties"))
-    sec_rows = [
-        ["Density kg/m3", f"{numeric(prop.get('density_kg_m3'), 0.0):,.2f}"],
-        ["Neutron barns", f"{numeric(prop.get('neutron_cross_section_barn'), 0.0):,.4f}"],
-        ["State factor", f"{numeric(prop.get('state_hardness_factor'), 1.0):.4f}"],
-        ["Affinity 0..1", f"{numeric(prop.get('eutectic_affinity_factor_0_1'), 0.0):.4f}"],
-    ]
-    print(format_compact_table(sec_rows))
-
-    print()
-    print(bold("Warnings & Notes"))
-    warnings: List[str] = []
-    input_validity = report.get("input_validity", {})
-    if isinstance(input_validity, dict):
-        warnings.extend([str(x) for x in input_validity.get("warnings", [])])
-    warnings.extend([str(x) for x in report.get("input_warnings", [])])
-
-    if warnings:
-        for msg in warnings:
-            print(colorize(f"! {msg}", warning_color(msg)))
-    else:
-        print(colorize("No active warnings.", Ansi.WHITE))
-
-    notes = report.get("notes", [])
-    for note in notes[:2]:
-        print(f"- {note}")
+    print(bold("Diagnostics"))
+    for item in report["diagnostics"]:
+        message = item["message"]
+        print(colorize(f"! {message}", warning_color(message)))
 
     if last_error:
         print()
@@ -124,7 +106,7 @@ def print_help() -> None:
     print("Commands:")
     print("  recalc      Recalculate the current report")
     print("  edit-comp   Edit composition by set/remove/full string")
-    print("  edit-params Edit state/env/regime/temperature/oxygen/k-hardening/name")
+    print("  edit-params Edit state, environment, regime, conditions, or material profile")
     print("  save        Save current case under --cases-dir/*.json")
     print("  load        Load a saved case by number")
     print("  list        Show saved case list")
@@ -180,7 +162,7 @@ def edit_composition_interactive(current: Dict[str, float], db: Dict[str, Elemen
             print(colorize(f"Error: {exc}", Ansi.RED))
 
 
-def edit_params_interactive(case: CaseConfig) -> CaseConfig:
+def edit_params_interactive(case: CaseConfig, db: Dict[str, ElementData]) -> CaseConfig:
     print()
     print(bold("Edit parameters (press Enter to keep current value)"))
 
@@ -196,15 +178,25 @@ def edit_params_interactive(case: CaseConfig) -> CaseConfig:
     oxy_raw = input(f"oxygen_activity 0..1 [{case.oxygen_activity}]: ").strip()
     k_raw = input(f"k_hardening [{case.k_hardening}]: ").strip()
 
+    print("Material profiles: " + ", ".join(MATERIAL_PROFILES))
+    profile_input = input(f"material profile [{case.material_profile or 'none'}] (none to clear): ").strip()
+    profile = case.material_profile
+    if profile_input:
+        profile = None if profile_input == "none" else profile_input
+    composition = dict(case.composition)
+    if profile and profile != case.material_profile:
+        composition = profile_composition(profile, db)
+
     updated = CaseConfig(
         name=name,
-        composition=dict(case.composition),
+        composition=composition,
         state=state,
         env=env,
         temperature_k=case.temperature_k,
         oxygen_activity=case.oxygen_activity,
         regime_override=regime,
         k_hardening=case.k_hardening,
+        material_profile=profile,
     )
     if temp_raw:
         updated.temperature_k = numeric(temp_raw, case.temperature_k)
@@ -228,6 +220,7 @@ def recalc_report(case: CaseConfig, db: Dict[str, ElementData]) -> Dict[str, Any
         temperature_k=case.temperature_k,
         oxygen_activity=case.oxygen_activity,
         regime_override=case.regime_override,
+        material_profile=case.material_profile,
     )
 
 
@@ -265,28 +258,28 @@ def render_compare_cases(
     print(f"Right: {colorize(right_label, Ansi.CYAN)}")
     print("-" * 88)
 
-    left_regime = str(left_report.get("model_context", {}).get("material_regime", "n/a"))
-    right_regime = str(right_report.get("model_context", {}).get("material_regime", "n/a"))
+    left_regime = str(left_report["classification"]["regime"] or left_report["classification"]["kind"])
+    right_regime = str(right_report["classification"]["regime"] or right_report["classification"]["kind"])
 
     metrics = [
         (
             "Hardness HV",
-            summary_value(left_report, "predicted_properties", "vickers_hardness_hv"),
-            summary_value(right_report, "predicted_properties", "vickers_hardness_hv"),
+            estimate_value(left_report, "vickers_hardness_hv"),
+            estimate_value(right_report, "vickers_hardness_hv"),
             False,
             2,
         ),
         (
             "Melt Temp K",
-            summary_value(left_report, "predicted_properties", "estimated_melting_point_k"),
-            summary_value(right_report, "predicted_properties", "estimated_melting_point_k"),
+            estimate_value(left_report, "melting_point_k"),
+            estimate_value(right_report, "melting_point_k"),
             False,
             2,
         ),
         (
-            "Corrosion 0..1",
-            summary_value(left_report, "corrosion_and_oxidation", "galvanic_corrosion_risk_index_0_1"),
-            summary_value(right_report, "corrosion_and_oxidation", "galvanic_corrosion_risk_index_0_1"),
+            "Corrosion susceptibility 0..1",
+            estimate_value(left_report, "corrosion_susceptibility_index_0_1"),
+            estimate_value(right_report, "corrosion_susceptibility_index_0_1"),
             True,
             4,
         ),
@@ -306,8 +299,8 @@ def render_compare_cases(
         ),
         (
             "Density kg/m3",
-            summary_value(left_report, "predicted_properties", "density_kg_m3"),
-            summary_value(right_report, "predicted_properties", "density_kg_m3"),
+            estimate_value(left_report, "density_kg_m3"),
+            estimate_value(right_report, "density_kg_m3"),
             False,
             2,
         ),
@@ -315,6 +308,12 @@ def render_compare_cases(
 
     rows: List[List[str]] = [["Metric", "Left", "Right", "Delta (R-L)"]]
     rows.append(["Regime", left_regime, right_regime, "n/a"])
+    rows.append(["Status", left_report["status"], right_report["status"], "n/a"])
+    for field, label in (("solidus_k", "Solidus K"), ("liquidus_k", "Liquidus K"), ("decomposition_k", "Decomposition K"), ("decomposition_or_sublimation_k", "Decomposition or sublimation K")):
+        left_value = estimate_value(left_report, field)
+        right_value = estimate_value(right_report, field)
+        if left_value is not None or right_value is not None:
+            metrics.append((label, left_value, right_value, False, 0))
     for label, left_v, right_v, risk_delta, prec in metrics:
         delta = None if left_v is None or right_v is None else right_v - left_v
         rows.append(
@@ -338,28 +337,29 @@ def render_compare_cases(
         comp_rows.append(
             [
                 sym,
-                f"{left_frac * 100.0:6.2f}%",
-                f"{right_frac * 100.0:6.2f}%",
-                fmt_delta((right_frac - left_frac) * 100.0, higher_is_risk=False, precision=2) + "%",
+                format_percent(left_frac) if left_frac is not None else "n/a",
+                format_percent(right_frac) if right_frac is not None else "n/a",
+                fmt_delta(delta, precision=2) + "%" if delta is not None else "n/a",
             ]
         )
     print(format_compact_table(comp_rows))
 
     print()
     print(bold("Phase Delta"))
-    left_phase = left_report.get("phase_estimate", {})
-    right_phase = right_report.get("phase_estimate", {})
+    left_phase = left_report.get("model_details", {}).get("phase_estimate", {})
+    right_phase = right_report.get("model_details", {}).get("phase_estimate", {})
     phase_keys = sorted(set(left_phase.keys()) | set(right_phase.keys()))
     phase_rows: List[List[str]] = [["Phase", "Left %", "Right %", "Delta"]]
     for key in phase_keys:
-        left_frac = numeric(left_phase.get(key), 0.0)
-        right_frac = numeric(right_phase.get(key), 0.0)
+        left_frac = left_phase.get(key)
+        right_frac = right_phase.get(key)
+        delta = None if left_frac is None or right_frac is None else (right_frac - left_frac) * 100.0
         phase_rows.append(
             [
                 key.replace("_fraction", "").replace("_", " "),
-                f"{left_frac * 100.0:6.2f}%",
-                f"{right_frac * 100.0:6.2f}%",
-                fmt_delta((right_frac - left_frac) * 100.0, higher_is_risk=False, precision=2) + "%",
+                format_percent(left_frac) if left_frac is not None else "n/a",
+                format_percent(right_frac) if right_frac is not None else "n/a",
+                fmt_delta(delta, precision=2) + "%" if delta is not None else "n/a",
             ]
         )
     print(format_compact_table(phase_rows))
@@ -407,9 +407,10 @@ def compute_element_contributions(
     db: Dict[str, ElementData],
     baseline_report: Dict[str, Any],
 ) -> List[Dict[str, Any]]:
-    base_hv = summary_value(baseline_report, "predicted_properties", "vickers_hardness_hv")
-    base_tm = summary_value(baseline_report, "predicted_properties", "estimated_melting_point_k")
-    base_cor = summary_value(baseline_report, "corrosion_and_oxidation", "galvanic_corrosion_risk_index_0_1")
+    base_hv = estimate_value(baseline_report, "vickers_hardness_hv")
+    transition = "liquidus_k" if baseline_report["properties"]["liquidus_k"] is not None else "melting_point_k"
+    base_tm = estimate_value(baseline_report, transition)
+    base_cor = estimate_value(baseline_report, "corrosion_susceptibility_index_0_1")
     base_brit = summary_value(baseline_report, "hume_rothery", "brittleness_index_0_1")
 
     rows: List[Dict[str, Any]] = []
@@ -440,9 +441,9 @@ def compute_element_contributions(
             regime_override=case.regime_override,
         )
 
-        reduced_hv = summary_value(reduced_report, "predicted_properties", "vickers_hardness_hv")
-        reduced_tm = summary_value(reduced_report, "predicted_properties", "estimated_melting_point_k")
-        reduced_cor = summary_value(reduced_report, "corrosion_and_oxidation", "galvanic_corrosion_risk_index_0_1")
+        reduced_hv = estimate_value(reduced_report, "vickers_hardness_hv")
+        reduced_tm = estimate_value(reduced_report, transition)
+        reduced_cor = estimate_value(reduced_report, "corrosion_susceptibility_index_0_1")
         reduced_brit = summary_value(reduced_report, "hume_rothery", "brittleness_index_0_1")
 
         rows.append(
@@ -472,7 +473,7 @@ def render_contributions_screen(
     max_abs_hv = max((abs(r["delta_hv"]) for r in contrib_rows if isinstance(r.get("delta_hv"), float)), default=0.0)
 
     print(bold("Leave-One-Out Effect (full model minus model without element)"))
-    table: List[List[str]] = [["Sym", "Frac", "dHV", "HV Impact", "dTm(K)", "dCor", "dBrit"]]
+    table: List[List[str]] = [["Sym", "Frac", "dHV", "HV Impact", "dThermal(K)", "dCor", "dBrit"]]
     for row in contrib_rows:
         delta_hv = row["delta_hv"]
         delta_tm = row["delta_tm"]
@@ -505,32 +506,32 @@ def render_contributions_screen(
     hard_rows = [
         [
             "Interstitial term",
-            fmt_float(summary_value(report, "predicted_properties", "hardening_interstitial_term"), 4),
+            fmt_float(summary_value(report, "hardness_model", "hardening_interstitial_term"), 4),
         ],
         [
             "Substitutional term",
-            fmt_float(summary_value(report, "predicted_properties", "hardening_substitutional_term"), 4),
+            fmt_float(summary_value(report, "hardness_model", "hardening_substitutional_term"), 4),
         ],
         [
             "Precipitation bonus HV",
-            fmt_float(summary_value(report, "predicted_properties", "precipitation_bonus_hv"), 2),
+            fmt_float(summary_value(report, "hardness_model", "precipitation_bonus_hv"), 2),
         ],
-        ["Mg alloy bonus HV", fmt_float(summary_value(report, "predicted_properties", "mg_alloy_bonus_hv"), 2)],
+        ["Mg alloy bonus HV", fmt_float(summary_value(report, "hardness_model", "mg_alloy_bonus_hv"), 2)],
         [
             "Refractory bonus HV",
-            fmt_float(summary_value(report, "predicted_properties", "refractory_composite_bonus_hv"), 2),
+            fmt_float(summary_value(report, "hardness_model", "refractory_composite_bonus_hv"), 2),
         ],
         [
             "Ni superalloy bonus HV",
-            fmt_float(summary_value(report, "predicted_properties", "nickel_superalloy_bonus_hv"), 2),
+            fmt_float(summary_value(report, "hardness_model", "nickel_superalloy_bonus_hv"), 2),
         ],
-        ["Carbide bonus HV", fmt_float(summary_value(report, "predicted_properties", "carbide_bonus_hv"), 2)],
-        ["State hardness factor", fmt_float(summary_value(report, "predicted_properties", "state_hardness_factor"), 4)],
+        ["Carbide bonus HV", fmt_float(summary_value(report, "hardness_model", "carbide_bonus_hv"), 2)],
+        ["State hardness factor", fmt_float(summary_value(report, "hardness_model", "state_hardness_factor"), 4)],
         [
             "Raw hardness before cap",
-            fmt_float(summary_value(report, "predicted_properties", "raw_hardness_hv_before_cap"), 2),
+            fmt_float(summary_value(report, "hardness_model", "raw_hardness_hv_before_cap"), 2),
         ],
-        ["Final hardness HV", fmt_float(summary_value(report, "predicted_properties", "vickers_hardness_hv"), 2)],
+        ["Final hardness HV", fmt_float(estimate_value(report, "vickers_hardness_hv"), 2)],
     ]
     print(format_compact_table(hard_rows))
 

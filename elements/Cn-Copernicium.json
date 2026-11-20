@@ -37,7 +37,7 @@
     "temp_res_coefficient_1_K": 0.0038
   },
   "chemical": {
-    "electronegativity_pauling": NaN,
+    "electronegativity_pauling": null,
     "standard_electrode_potential_V": 0.974,
     "oxide_formation_energy_kJ_mol": -183.2,
     "valence_states": [
@@ -98,7 +98,7 @@
       "temp_res_coefficient_1_K": "unknown"
     },
     "chemical": {
-      "electronegativity_pauling": "reference",
+      "electronegativity_pauling": "missing",
       "standard_electrode_potential_V": "unknown",
       "oxide_formation_energy_kJ_mol": "unknown",
       "valence_states": "reference"

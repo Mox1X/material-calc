@@ -46,22 +46,6 @@ def validate_runtime_context(
     return t, oxy
 
 
-def validate_composition_values(
-    composition: Mapping[str, float],
-    *,
-    empty_message: str = "Composition is empty. Example: Fe:0.7,Cr:0.2,C:0.1",
-) -> None:
-    if not composition:
-        raise ValueError(empty_message)
-
-    for sym, value in composition.items():
-        v = float(value)
-        if not math.isfinite(v):
-            raise ValueError(f"Composition fraction for {sym} must be finite")
-        if v <= 0.0:
-            raise ValueError(f"Composition fraction for {sym} must be > 0")
-
-
 def normalize_composition(
     composition: Mapping[str, float],
     *,
@@ -96,9 +80,15 @@ def normalize_composition(
     if total <= 0.0:
         raise ValueError("Composition must contain at least one positive finite fraction.")
 
+    if not math.isfinite(total):
+        raise ValueError("Combined composition fractions must be finite")
+
     normalized: Dict[str, float] = {}
     for sym, value in compact.items():
-        normalized[sym] = value / total
+        fraction = value / total
+        if fraction == 0.0:
+            raise ValueError(f"Composition fraction for {sym} is too small to normalize")
+        normalized[sym] = fraction
     return normalized
 
 

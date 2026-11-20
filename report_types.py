@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from typing import Dict, List, TypedDict
+from typing import Any, Dict, List, TypedDict
 
 
 class BaseElementSection(TypedDict):
@@ -72,7 +72,7 @@ class PhaseEstimateSection(TypedDict):
 
 class CorrosionSection(TypedDict):
     electrode_potential_spread_v: float
-    galvanic_corrosion_risk_index_0_1: float
+    corrosion_susceptibility_index_0_1: float
     halogen_pitting_risk_0_1: float
     passivation_multiplier: float
     ti_passivation_multiplier: float
@@ -105,7 +105,7 @@ class ImpurityEffectsSection(TypedDict):
     mn_antidote_active: bool
 
 
-class CompatibilityReport(TypedDict):
+class EmpiricalReport(TypedDict):
     base_element: BaseElementSection
     composition_normalized: Dict[str, float]
     hume_rothery: HumeRotherySection
@@ -116,3 +116,61 @@ class CompatibilityReport(TypedDict):
     input_validity: InputValiditySection
     impurity_effects: ImpurityEffectsSection
     notes: List[str]
+
+
+class Estimate(TypedDict):
+    value: float | None
+    range: list[float] | None
+    unit: str
+    method: str
+    source: str
+    assumptions: list[str]
+
+
+class Diagnostic(TypedDict):
+    code: str
+    message: str
+
+
+class Classification(TypedDict):
+    kind: str
+    family: str | None
+    regime: str | None
+    formula: str | None
+    profile: str | None
+    candidates: list[str]
+    assumed_phase_mass_fractions: dict[str, float] | None
+    basis: str
+
+
+class Feasibility(TypedDict):
+    status: str
+    solid_phase_index: float | None
+
+
+class ReportConditions(TypedDict):
+    material_state: str
+    environment: str
+    temperature_k: float
+    oxygen_activity: float
+
+
+class RequiredReportFields(TypedDict):
+    schema_version: int
+    status: str
+    composition_normalized: dict[str, float]
+    conditions: ReportConditions | None
+    classification: Classification
+    feasibility: Feasibility
+    properties: dict[str, Estimate | None]
+    diagnostics: list[Diagnostic]
+
+
+class CompatibilityReport(RequiredReportFields, total=False):
+    model_details: dict[str, Any]
+    calibration: dict[str, Any]
+
+
+def estimate_value(report: CompatibilityReport, field: str) -> float | None:
+    estimate = report["properties"].get(field)
+    return estimate["value"] if estimate is not None else None

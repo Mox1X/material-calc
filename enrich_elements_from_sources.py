@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import os
 import ssl
 from pathlib import Path
@@ -28,8 +29,9 @@ def _to_float(value: Any) -> Optional[float]:
     if value is None:
         return None
     try:
-        return float(value)
-    except (TypeError, ValueError):
+        number = float(value)
+        return number if math.isfinite(number) else None
+    except (TypeError, ValueError, OverflowError):
         return None
 
 
@@ -38,7 +40,7 @@ def _to_int(value: Any) -> Optional[int]:
         return None
     try:
         return int(float(value))
-    except (TypeError, ValueError):
+    except (TypeError, ValueError, OverflowError):
         return None
 
 

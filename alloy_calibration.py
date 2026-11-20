@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 
 import json
+import math
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
 from alloy_engine import compatibility_report
 from alloy_models import ElementData
 from composition import parse_composition
+from report_types import estimate_value
 
 
 def load_calibration_cases(path: Path) -> List[Dict[str, Any]]:
@@ -18,7 +20,10 @@ def load_calibration_cases(path: Path) -> List[Dict[str, Any]]:
 
 def _as_float(value: Any, field_path: str) -> float:
     try:
-        return float(value)
+        number = float(value)
+        if not math.isfinite(number):
+            raise ValueError
+        return number
     except (TypeError, ValueError):
         raise ValueError(f"Calibration field '{field_path}' must be numeric")
 
@@ -69,6 +74,7 @@ def _prepare_calibration_cases(
 
         prepared.append(
             {
+                'index': idx,
                 'composition': composition,
                 'target_hv': target_hv,
                 'weight': weight,
@@ -92,33 +98,51 @@ def fit_k_hardening(
     temperature_k: float,
     oxygen_activity: float,
     tuning: Dict[str, Any] | None = None,
+    *,
+    skipped_cases: list[int] | None = None,
 ) -> Tuple[float, float]:
     prepared_cases = _prepare_calibration_cases(cases, material_state, env, temperature_k, oxygen_activity)
+
+    def hardness(case: dict, k: float) -> float | None:
+        report = compatibility_report(
+            case["composition"], db, k, case["state"],
+            env=case["env"], temperature_k=case["temperature_k"],
+            oxygen_activity=case["oxygen_activity"], tuning=tuning,
+        )
+        return estimate_value(report, "vickers_hardness_hv")
+
+    usable = []
+    skipped = []
+    for case in prepared_cases:
+        if case["target_hv"] is None:
+            continue
+        if hardness(case, 1.0) is None:
+            skipped.append(case["index"])
+        else:
+            usable.append(case)
+    if skipped_cases is not None:
+        skipped_cases.extend(skipped)
+    if not usable:
+        raise ValueError("No calibration case has an applicable HV estimate. Skipped cases: " + ", ".join(map(str, skipped)))
+
     best_k = 1.0
-    best_err = float('inf')
+    best_err = math.inf
+    weight_sum = sum(case["weight"] for case in usable)
     for i in range(10, 401):
         k = i / 100.0
-        err = 0.0
-        weight_sum = 0.0
-        for case in prepared_cases:
-            rep = compatibility_report(
-                case['composition'],
-                db,
-                k_hardening=k,
-                material_state=case['state'],
-                env=case['env'],
-                temperature_k=case['temperature_k'],
-                oxygen_activity=case['oxygen_activity'],
-                tuning=tuning,
-            )
-            target_hv = case['target_hv']
-            if target_hv is not None:
-                pred_hv = rep['predicted_properties']['vickers_hardness_hv']
-                err += case['weight'] * ((pred_hv - target_hv) / max(1.0, target_hv)) ** 2
-                weight_sum += case['weight']
-        if weight_sum > 0:
-            err /= weight_sum
-        if err < best_err:
-            best_err = err
+        error = 0.0
+        for case in usable:
+            prediction = hardness(case, k)
+            if prediction is None:
+                error = math.inf
+                break
+            target = case["target_hv"]
+            error += case["weight"] * ((prediction - target) / max(1.0, target)) ** 2
+        error /= weight_sum
+        if error < best_err:
+            best_err = error
             best_k = k
+
+    if not math.isfinite(best_err):
+        raise ValueError("No finite fit found for the applicable calibration cases")
     return best_k, best_err
